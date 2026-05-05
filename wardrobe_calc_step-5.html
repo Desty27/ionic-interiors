@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wardrobe Calculator - Accessories</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/calculator.css" rel="stylesheet">
+  <style>
+    .accessory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .accessory-card {
+      display: block;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      background: #fff;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .accessory-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .accessory-card:has(> .checkbox-input:checked) {
+      border-color: #2596be;
+      border-width: 2px;
+    }
+    .accessory-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .accessory-title {
+      padding: 12px;
+      text-align: center;
+      font-weight: 500;
+      color: #333;
+      margin: 0;
+      border-top: 1px solid #eee;
+    }
+    .accessory-card:has(> .checkbox-input:checked) .accessory-title {
+      color: #2596be;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="top-nav">
+    <div class="logo">
+      <a href="index.html"><img src="assets/logo.png" alt="Ionic Interiors Logo"></a>
+    </div>
+    
+    <div class="nav-steps-container">
+      <div class="nav-steps">
+        <div class="progress-line">
+          <div class="progress-fill" style="width: 80%;"></div>
+        </div>
+        
+        <div class="step completed">
+          <div class="circle"></div>
+          <div class="label">LENGTH</div>
+        </div>
+        <div class="step completed">
+          <div class="circle"></div>
+          <div class="label">TYPE</div>
+        </div>
+        <div class="step completed">
+          <div class="circle"></div>
+          <div class="label">FINISH</div>
+        </div>
+        <div class="step completed">
+          <div class="circle"></div>
+          <div class="label">MATERIAL</div>
+        </div>
+        <div class="step active">
+          <div class="circle"></div>
+          <div class="label">ACCESSORIES</div>
+        </div>
+        <div class="step">
+          <div class="circle"></div>
+          <div class="label">GET QUOTE</div>
+        </div>
+      </div>
+      <div class="step-counter">5/6</div>
+    </div>
+  </div>
+
+  <div class="container mt-5" style="max-width: 800px;">
+    <form id="step5" method="get" action="wardrobe_calc_step-6.html" class="card border-0 p-4 shadow-sm" style="border-radius: 12px;">
+      
+      <div class="header mb-4">
+        <h4 class="fw-bold text-dark">Add your preferred accessories (optional)</h4>
+      </div>
+
+      <div class="accessory-grid mx-auto mt-2">
+        
+        <!-- Accessory 1: Loft -->
+        <label class="accessory-card">
+          <input type="checkbox" name="accessories" value="Loft" class="checkbox-input">
+          <span class="checkbox-check"></span>
+          <img src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=400&q=80" alt="Loft" class="accessory-img">
+          <p class="accessory-title">Loft</p>
+        </label>
+
+        <!-- Accessory 2: Single full-size drawer -->
+        <label class="accessory-card">
+          <input type="checkbox" name="accessories" value="Single full-size drawer" class="checkbox-input">
+          <span class="checkbox-check"></span>
+          <img src="https://images.unsplash.com/photo-1581428982868-e410dd147b9d?auto=format&fit=crop&w=400&q=80" alt="Single full-size drawer" class="accessory-img">
+          <p class="accessory-title">Single full-size drawer</p>
+        </label>
+
+        <!-- Accessory 3: 1 half-drawer -->
+        <label class="accessory-card">
+          <input type="checkbox" name="accessories" value="1 half-drawer" class="checkbox-input">
+          <span class="checkbox-check"></span>
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=400&q=80" alt="1 half-drawer" class="accessory-img">
+          <p class="accessory-title">1 half-drawer</p>
+        </label>
+
+        <!-- Accessory 4: 2 half-drawers -->
+        <label class="accessory-card">
+          <input type="checkbox" name="accessories" value="2 half-drawers" class="checkbox-input">
+          <span class="checkbox-check"></span>
+          <img src="https://images.unsplash.com/photo-1595514535415-83e87de4bbcd?auto=format&fit=crop&w=400&q=80" alt="2 half-drawers" class="accessory-img">
+          <p class="accessory-title">2 half-drawers</p>
+        </label>
+
+        <!-- Accessory 5: Wicker pull out -->
+        <label class="accessory-card">
+          <input type="checkbox" name="accessories" value="Wicker pull out" class="checkbox-input">
+          <span class="checkbox-check"></span>
+          <img src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=400&q=80" alt="Wicker pull out" class="accessory-img">
+          <p class="accessory-title">Wicker pull out</p>
+        </label>
+
+      </div>
+
+      <div class="d-flex justify-content-between mt-5 sticky-bottom bg-white py-3" style="z-index: 1020;">
+        <button type="button" class="btn btn-back fw-bold px-0" onclick="window.location.href='wardrobe_calc_step-4.html'">BACK</button>
+        <button type="submit" class="btn btn-next px-5 rounded-pill fw-bold">NEXT</button>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+</html>

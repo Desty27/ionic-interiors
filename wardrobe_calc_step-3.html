@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wardrobe Calculator - Finish</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/calculator.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="top-nav">
+    <div class="logo">
+      <a href="index.html"><img src="assets/logo.png" alt="Ionic Interiors Logo"></a>
+    </div>
+    
+    <div class="nav-steps-container">
+      <div class="nav-steps">
+        <div class="progress-line">
+          <div class="progress-fill" style="width: 40%;"></div>
+        </div>
+        
+        <div class="step completed">
+          <div class="circle"></div>
+          <div class="label">LENGTH</div>
+        </div>
+        <div class="step completed">
+          <div class="circle"></div>
+          <div class="label">TYPE</div>
+        </div>
+        <div class="step active">
+          <div class="circle"></div>
+          <div class="label">FINISH</div>
+        </div>
+        <div class="step">
+          <div class="circle"></div>
+          <div class="label">MATERIAL</div>
+        </div>
+        <div class="step">
+          <div class="circle"></div>
+          <div class="label">ACCESSORIES</div>
+        </div>
+        <div class="step">
+          <div class="circle"></div>
+          <div class="label">GET QUOTE</div>
+        </div>
+      </div>
+      <div class="step-counter">3/6</div>
+    </div>
+  </div>
+
+  <div class="container mt-5" style="max-width: 700px;">
+    <form id="step3" method="get" action="wardrobe_calc_step-4.html" class="card border-0 p-4 shadow-sm" style="border-radius: 12px;">
+      
+      <div class="header mb-4">
+        <h4 class="fw-bold text-dark">Select your preferred finish</h4>
+      </div>
+
+      <div class="options-container mx-auto" style="max-width: 450px;">
+        
+        <!-- Laminate -->
+        <label class="package-card mb-3 text-start">
+          <input type="radio" name="wardrobe_finish" value="Laminate" class="radio-input" required>
+          
+          <div class="d-flex align-items-center mb-3">
+            <div class="inline-radio mb-0">
+              <span class="radio-circle"></span>
+              <strong>Standard - Laminate</strong>
+            </div>
+          </div>
+          
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Laminate Finish" class="package-image mb-2" style="height: 120px;">
+          
+          <table class="details-table">
+            <tr>
+              <td>Price</td>
+              <td>: ₹₹</td>
+            </tr>
+            <tr>
+              <td>Pro Tip</td>
+              <td>: Looking for a seamless finish that sits well with every interior? This one's for you.</td>
+            </tr>
+          </table>
+        </label>
+
+        <!-- Membrane -->
+        <label class="package-card mb-3 text-start">
+          <input type="radio" name="wardrobe_finish" value="Membrane" class="radio-input">
+          
+          <div class="d-flex align-items-center mb-3">
+            <div class="inline-radio mb-0">
+              <span class="radio-circle"></span>
+              <strong>Premium - Membrane</strong>
+            </div>
+          </div>
+          
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80" alt="Membrane Finish" class="package-image mb-2" style="height: 120px;">
+          
+          <table class="details-table">
+            <tr>
+              <td>Price</td>
+              <td>: ₹₹₹</td>
+            </tr>
+            <tr>
+              <td>Pro Tip</td>
+              <td>: Get a magazine-like look that requires low maintenance.</td>
+            </tr>
+          </table>
+        </label>
+
+        <!-- Acrylic -->
+        <label class="package-card mb-3 text-start">
+          <input type="radio" name="wardrobe_finish" value="Acrylic" class="radio-input">
+          
+          <div class="d-flex align-items-center mb-3">
+            <div class="inline-radio mb-0">
+              <span class="radio-circle"></span>
+              <strong>Luxe - Acrylic</strong>
+            </div>
+          </div>
+          
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Acrylic Finish" class="package-image mb-2" style="height: 120px;">
+          
+          <table class="details-table">
+            <tr>
+              <td>Price</td>
+              <td>: ₹₹₹₹</td>
+            </tr>
+            <tr>
+              <td>Pro Tip</td>
+              <td>: Adds a touch of luxury to your modular wardrobe.</td>
+            </tr>
+          </table>
+        </label>
+
+      </div>
+
+      <div class="d-flex justify-content-between mt-4 sticky-bottom bg-white py-3" style="z-index: 1020;">
+        <button type="button" class="btn btn-back fw-bold px-0" onclick="window.location.href='wardrobe_calc_step-2.html'">BACK</button>
+        <button type="submit" class="btn btn-next px-5 rounded-pill fw-bold">NEXT</button>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+</html>

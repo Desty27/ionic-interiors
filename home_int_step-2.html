@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi Step Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/calculator.css" rel="stylesheet">
+  
+  
+  
+</head>
+<body>
+
+  <div class="top-nav">
+    <div class="logo">
+      <a href="index.html"><img src="assets/logo.png" alt="Ionic Interiors Logo"></a>
+    </div>
+    <div class="nav-steps-container">
+      <div class="nav-steps">
+        <div class="progress-line">
+          <div class="progress-fill" style="width: 33%;"></div>
+        </div>
+        <div class="step completed">
+          <div class="circle"></div>
+          <div class="label">BHK TYPE</div>
+        </div>
+        <div class="step active">
+          <div class="circle"></div>
+          <div class="label">ROOMS</div>
+        </div>
+        <div class="step ">
+          <div class="circle"></div>
+          <div class="label">PACKAGE</div>
+        </div>
+        <div class="step ">
+          <div class="circle"></div>
+          <div class="label">GET QUOTE</div>
+        </div>
+      </div>
+      <div class="step-counter">2/4</div>
+    </div>
+  </div>
+
+<div class="container mt-5" style="max-width: 700px;">
+  <!-- Progress Bar -->
+
+  <!-- Step 1 -->
+  <form id="step1" method="get" action="home_int_step-2.html" class="card  p-4 border-0 hidden">
+    <div class="container py-5">
+      <h4 class="text-center fw-bold mb-4">Select your BHK type</h4>
+      
+      
+      <div class="bhk-box" onclick="selectBHK(this, 1)">
+        <input type="radio" class="bhk-radio" name="BHK_Type" value="1 BHK"  required> 1 BHK
+        <span class="toggle-icon"></span>
+      </div>
+
+      <div class="bhk-box" onclick="selectBHK(this, 2)">
+        <input type="radio" class="bhk-radio" name="BHK_Type" value="2 BHK" > 2 BHK
+        <span class="toggle-icon"></span>
+        <div id="sub-2" class="sub-bhk ">
+          <div class="sub-card" onclick="selectSubBHK(event, this, 'Small')" >
+            <div><strong>Small</strong></div>
+            <div class="text-muted small">Below 800 sq ft</div>
+            <input type="hidden" name="BHK_Subtype" value="Small">
+          </div>
+          <div class="sub-card" onclick="selectSubBHK(event, this, 'Large')" >
+            <div><strong>Large</strong></div>
+            <div class="text-muted small">Above 1200 sq ft</div>
+            <input type="hidden" name="BHK_Subtype" value="Large">
+          </div>
+        </div>
+      </div>
+      
+      <div class="bhk-box" onclick="selectBHK(this, 3)">
+        <input type="radio" class="bhk-radio" name="BHK_Type" value="3 BHK" > 3 BHK
+        <span class="toggle-icon"></span>
+        <div id="sub-3" class="sub-bhk ">
+          <div class="sub-card" onclick="selectSubBHK(event, this, 'Small')" >
+            <div><strong>Small</strong></div>
+            <div class="text-muted small">Below 1200 sq ft</div>
+            <input type="hidden" name="BHK_Subtype" value="Small">
+          </div>
+          <div class="sub-card" onclick="selectSubBHK(event, this, 'Large')" >
+            <div><strong>Large</strong></div>
+            <div class="text-muted small">Above 2000 sq ft</div>
+            <input type="hidden" name="BHK_Subtype" value="Large">
+          </div>
+        </div>
+      </div>
+
+      <div class="bhk-box" onclick="selectBHK(this, 4)">
+        <input type="radio" class="bhk-radio" name="BHK_Type" value="4 BHK" > 4 BHK
+        <span class="toggle-icon"></span>
+        <div id="sub-4" class="sub-bhk ">
+          <div class="sub-card" onclick="selectSubBHK(event, this, 'Small')" >
+            <div><strong>Small</strong></div>
+            <div class="text-muted small">Below 2000 sq ft</div>
+            <input type="hidden" name="BHK_Subtype" value="Small">
+          </div>
+          <div class="sub-card" onclick="selectSubBHK(event, this, 'Large')" >
+            <div><strong>Large</strong></div>
+            <div class="text-muted small">Above 2500 sq ft</div>
+            <input type="hidden" name="BHK_Subtype" value="Large">
+          </div>
+        </div>
+      </div>
+
+      <div class="bhk-box" onclick="selectBHK(this, 5)">
+        <input type="radio" class="bhk-radio" name="BHK_Type" value="5 BHK" > 5 BHK
+        <span class="toggle-icon"></span>
+      </div>
+
+    </div>
+      <div class="d-flex justify-content-end mt-4 sticky-bottom bg-white py-3" style="z-index: 1020;">
+        <button type="submit" name="step1" class="btn butte px-4 rounded-pill fw-bold">NEXT</button>
+      </div>
+
+  </form>
+
+  <!-- Step 2 -->
+  <form id="step2" method="get" action="home_int_step-3.html" class="card  p-4 border-0 ">
+    <h4 class="text-center fw-bold mb-4">Select the rooms you'd like us to design</h4>
+    
+
+    <div class="room-list">
+      
+      <div class="room-box">
+        <span>Living Room</span>
+        <div class="counter">
+          <button type="button" onclick="decrement(this)">−</button>
+          <input type="hidden" name="living_count" value="1">
+          <span class="count">1</span>
+          <button type="button" onclick="increment(this)">+</button>
+        </div>
+      </div>
+
+      <div class="room-box">
+        <span>Kitchen</span>
+        <div class="counter">
+          <button type="button" onclick="decrement(this)">−</button>
+          <input type="hidden" name="kitchen_count" value="1">
+          <span class="count">1</span>
+          <button type="button" onclick="increment(this)">+</button>
+        </div>
+      </div>
+
+      <div class="room-box">
+        <span>Bedroom</span>
+        <div class="counter">
+          <button type="button" onclick="decrement(this)">−</button>
+          <input type="hidden" name="bedroom_count" value="1">
+          <span class="count">1</span>
+          <button type="button" onclick="increment(this)">+</button>
+        </div>
+      </div>
+
+      <div class="room-box">
+        <span>Bathroom</span>
+        <div class="counter">
+          <button type="button" onclick="decrement(this)">−</button>
+          <input type="hidden" name="bathroom_count" value="1">
+          <span class="count">1</span>
+          <button type="button" onclick="increment(this)">+</button>
+        </div>
+      </div>
+
+
+    </div>
+
+      <div class="d-flex justify-content-between mt-4 sticky-bottom bg-white py-3" style="z-index: 1020;">
+        <button type="button" class="btn btn-link text-danger fw-bold" onclick="window.location.href='home_int_step-1.html'">BACK</button>
+        <button type="submit" name="step2" class="btn butte px-4 rounded-pill fw-bold">NEXT</button>
+      </div>
+  </form>
+
+  <!-- Step 3 -->
+  <form id="step3" method="get" action="home_int_step-4.html" class="card  p-4 border-0 hidden">
+    <h5 class="text-center fw-bold mb-4">Select Your Package</h5>
+
+    <div class="package-container">
+  
+      <!-- Essentials -->
+      <label class="package-card">
+          <input type="radio" name="package" value="Essentials" class="radio-input" checked>
+          <span class="radio-check"></span>
+          <img src="../svg/Essentials.jpg" alt="Essentials Interior" class="package-image">
+          <h3 class="package-title">Essentials (₹)</h3>
+          <p class="package-description">
+              Simple, functional interiors designed for comfort and everyday living.
+          </p>
+          <ul class="package-features">
+              <li>Cost-effective solutions</li>
+              <li>Space-saving layouts</li>
+              <li>Essential finishes & fittings</li>
+          </ul>
+      </label>
+
+      <!-- Premium -->
+      <label class="package-card">
+          <input type="radio" name="package" value="Premium" class="radio-input">
+          <span class="radio-check"></span>
+          <img src="../svg/Premium.jpeg" alt="Premium Interior" class="package-image">
+          <h3 class="package-title">Premium (₹₹)</h3>
+          <p class="package-description">
+              Stylish interiors with a perfect balance of quality, design, and comfort.
+          </p>
+          <ul class="package-features">
+              <li>Durable premium materials</li>
+              <li>Customized design options</li>
+              <li>Enhanced storage & functionality</li>
+          </ul>
+      </label>
+
+      <!-- Luxe -->
+      <label class="package-card">
+          <input type="radio" name="package" value="Luxe" class="radio-input">
+          <span class="radio-check"></span>
+          <img src="../svg/Luxe.avif" alt="Luxe Interior" class="package-image">
+          <h3 class="package-title">Luxe (₹₹₹)</h3>
+          <p class="package-description">
+              High-end interiors crafted with luxury at every detail.
+          </p>
+          <ul class="package-features">
+              <li>Exclusive designer finishes</li>
+              <li>Bespoke luxury concepts</li>
+              <li>Premium décor & detailing</li>
+          </ul>
+      </label>
+      
+    </div>
+
+      <div class="d-flex justify-content-between mt-4 sticky-bottom bg-white py-3" style="z-index: 1020;">
+        <button type="button" class="btn btn-link text-danger fw-bold" onclick="window.location.href='home_int_step-2.html'">BACK</button>
+        <button type="submit" name="step3" class="btn butte px-4 rounded-pill fw-bold">NEXT</button>
+      </div>
+  </form>
+
+  <!-- Step 4 -->
+  <form id="step4" method="get" action="" class="card p-4 border-0 hidden" >
+    <h4 class="text-center fw-bold mb-4" style="color: #2596be;">Your estimate is almost ready</h4>
+
+    <div class="mb-3 position-relative lecet">
+      <input type="text" name="name" class="form-control py-2 px-3" placeholder="Name" required style="border: 1px solid #e0e0e0; border-radius: 8px;">
+    </div>
+
+    <div class="mb-3 position-relative lecet">
+      <input type="email" name="email" class="form-control py-2 px-3" placeholder="Email ID" required style="border: 1px solid #e0e0e0; border-radius: 8px;">
+    </div>
+
+    <div class="mb-3 d-flex align-items-center position-relative" style="border: 1px solid #e0e0e0; border-radius: 8px; padding-left: 12px;">
+      <span class="me-2"><img src="https://flagcdn.com/w40/in.png" alt="IN" width="20"></span>
+      <input type="tel" name="phone" class="form-control border-0 py-2 px-0" placeholder="Phone number" pattern="\d{10}" maxlength="10" minlength="10" required oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+    </div>
+
+    <div class="form-check mb-3 ps-0">
+      <div class="d-flex align-items-center">
+        <input class="form-check-input me-2" name="whatsapp_updates" type="checkbox" id="whatsappUpdates" checked style="background-color: #2596be; border-color: #2596be; width: 1.2em; height: 1.2em;">
+        <label class="form-check-label" for="whatsappUpdates" style="color: #555;">
+          Send me updates on WhatsApp
+        </label>
+      </div>
+    </div>
+
+    <div class="mb-3 position-relative lecet">
+      <input type="text" name="property_name" class="form-control py-2 px-3" placeholder="Property Name" style="border: 1px solid #e0e0e0; border-radius: 8px;">
+    </div>
+
+    <div class="text-muted small mt-3" style="color: #666;">
+      By submitting this form, you agree to the 
+      <a href="terms-and-conditions.html" class="footer-link">Terms and Conditions</a> &
+    <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>.
+    </div>
+
+    <div class="d-flex justify-content-between mt-4 sticky-bottom py-3" style="background: white; z-index: 1020; border-top: 1px solid #f0f0f0;">
+      <button type="button" class="btn btn-outline-secondary px-4" onclick="window.location.href='home_int_step-3.html'" style="border-radius: 8px; border-color: #2596be; color: #2596be;">
+        BACK
+      </button>
+      <button type="submit" name="step4" class="btn px-4 fw-bold" style="background: #2596be; color: white; border-radius: 8px;">
+        SUBMIT
+      </button>
+    </div>
+</form>
+</div>
+
+<script>
+  // Track selected BHK number (1, 2, 3, etc.)
+  let selectedBHKNumber = null;
+
+  // BHK Selection
+  function selectBHK(element, number) {
+    document.querySelectorAll(".bhk-box").forEach(box => {
+      box.classList.remove("active");
+      box.querySelectorAll(".sub-bhk").forEach(s => s.classList.remove("active"));
+    });
+
+    element.classList.add("active");
+    const sub = element.querySelector("#sub-" + number);
+    if (sub) sub.classList.add("active");
+
+    const radio = element.querySelector('input[type="radio"]');
+    if (radio) radio.checked = true;
+    
+    // Update selected BHK number (regardless of subtype)
+    selectedBHKNumber = number;
+  }
+
+  // Subtype Selection (Small/Large)
+  function selectSubBHK(event, element, value) {
+    event.stopPropagation();
+    const parent = element.parentElement;
+    parent.querySelectorAll(".sub-card").forEach(card => card.classList.remove("active"));
+    element.classList.add("active");
+    
+    const hiddenInput = parent.querySelector('input[name="BHK_Subtype"]');
+    if (hiddenInput) hiddenInput.value = value;
+  }
+  
+  // Counter Functions with BHK-based limits
+  function increment(btn) {
+    const counter = btn.parentNode;
+    const countDisplay = counter.querySelector('.count');
+    const hiddenInput = counter.querySelector('input[type="hidden"]');
+    let count = parseInt(countDisplay.textContent) || 0;
+    
+    // Set max based on selected BHK number (ignores subtype)
+    if (selectedBHKNumber && count >= selectedBHKNumber) return;
+    
+    count++;
+    countDisplay.textContent = count;
+    hiddenInput.value = count;
+  }
+
+  function decrement(btn) {
+    const counter = btn.parentNode;
+    const countDisplay = counter.querySelector('.count');
+    const hiddenInput = counter.querySelector('input[type="hidden"]');
+    let count = parseInt(countDisplay.textContent) || 1;
+    
+    if (count > 0) {
+      count--;
+      countDisplay.textContent = count;
+      hiddenInput.value = count;
+    }
+  }
+
+  // Form validation
+  function validateStep1() {
+    if (!selectedBHKNumber) {
+      alert("Please select a BHK type");
+      return false;
+    }
+    return true;
+  }
+
+  function validateStep2() {
+    if (!selectedBHKNumber) return true;
+    
+    const counts = document.querySelectorAll('.count');
+    let isValid = true;
+    
+    counts.forEach(count => {
+      if (parseInt(count.textContent) > selectedBHKNumber) {
+        isValid = false;
+      }
+    });
+    
+    if (!isValid) {
+      alert(`For ${selectedBHKNumber} BHK, you can select maximum ${selectedBHKNumber} of each room type`);
+      return false;
+    }
+    return true;
+  }
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const steps = document.querySelectorAll('.nav-steps .step');
+    if (!steps.length) return;
+    let last = 0;
+    steps.forEach((s, i) => {
+      if (s.classList.contains('active') || s.classList.contains('completed') || (s.querySelector('.circle') && s.querySelector('.circle').classList.contains('active'))) {
+        last = i;
+      }
+    });
+    const fill = document.querySelector('.progress-fill');
+    if (!fill) return;
+    const pct = (steps.length > 1) ? (last / (steps.length - 1)) * 100 : 0;
+    fill.style.width = pct + '%';
+  });
+</script>
+</body>
+</html>

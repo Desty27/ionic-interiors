@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wardrobe Calculator - Length</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/calculator.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="top-nav">
+    <div class="logo">
+      <a href="index.html"><img src="assets/logo.png" alt="Ionic Interiors Logo"></a>
+    </div>
+    
+    <div class="nav-steps-container">
+      <div class="nav-steps">
+        <div class="progress-line">
+          <div class="progress-fill" style="width: 0%;"></div>
+        </div>
+        
+        <div class="step active">
+          <div class="circle"></div>
+          <div class="label">LENGTH</div>
+        </div>
+        <div class="step">
+          <div class="circle"></div>
+          <div class="label">TYPE</div>
+        </div>
+        <div class="step">
+          <div class="circle"></div>
+          <div class="label">FINISH</div>
+        </div>
+        <div class="step">
+          <div class="circle"></div>
+          <div class="label">MATERIAL</div>
+        </div>
+        <div class="step">
+          <div class="circle"></div>
+          <div class="label">ACCESSORIES</div>
+        </div>
+        <div class="step">
+          <div class="circle"></div>
+          <div class="label">GET QUOTE</div>
+        </div>
+      </div>
+      <div class="step-counter">1/6</div>
+    </div>
+  </div>
+
+  <div class="container mt-5" style="max-width: 700px;">
+    <!-- Step 1 Form -->
+    <form id="step1" method="get" action="wardrobe_calc_step-2.html" class="card border-0 p-4 shadow-sm" style="border-radius: 12px;">
+      
+      <div class="header mb-4">
+        <h4 class="fw-bold text-dark">What is the height of your wardrobe?</h4>
+        <p class="text-muted mt-2">Want to know more. <a href="#">Check here</a></p>
+      </div>
+
+      <div class="alert-banner mx-auto" style="max-width: 450px;">
+        Standard size has been set for your convenience
+      </div>
+
+      <div class="options-container mx-auto mt-4" style="max-width: 450px;">
+        <!-- Option 1 -->
+        <label class="list-option-card">
+          <input type="radio" class="radio-input" name="wardrobe_height" value="4 ft" required>
+          <div class="inline-radio w-100 mb-0">
+            <span class="radio-circle"></span>
+            4 ft
+          </div>
+        </label>
+        
+        <!-- Option 2 -->
+        <label class="list-option-card">
+          <input type="radio" class="radio-input" name="wardrobe_height" value="6 ft">
+          <div class="inline-radio w-100 mb-0">
+            <span class="radio-circle"></span>
+            6 ft
+          </div>
+        </label>
+
+        <!-- Option 3 -->
+        <label class="list-option-card">
+          <input type="radio" class="radio-input" name="wardrobe_height" value="7 ft" checked>
+          <div class="inline-radio w-100 mb-0">
+            <span class="radio-circle"></span>
+            7 ft
+          </div>
+        </label>
+
+        <!-- Option 4 -->
+        <label class="list-option-card">
+          <input type="radio" class="radio-input" name="wardrobe_height" value="9 ft">
+          <div class="inline-radio w-100 mb-0">
+            <span class="radio-circle"></span>
+            9 ft
+          </div>
+        </label>
+      </div>
+
+      <div class="d-flex justify-content-between mt-5 sticky-bottom bg-white py-3" style="z-index: 1020;">
+        <button type="button" class="btn btn-back fw-bold px-0" onclick="window.location.href='index.html'">BACK</button>
+        <button type="submit" class="btn btn-next px-5 rounded-pill fw-bold">NEXT</button>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+</html>

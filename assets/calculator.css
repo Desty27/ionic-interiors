@@ -1,0 +1,590 @@
+/* ======================================================
+   Ionic Interiors – Calculator Shared Stylesheet
+   Accent: #2596be
+   ====================================================== */
+
+/* ── Reset / Base ────────────────────────────────── */
+body {
+  background: #f6f5f7;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ── Top Navigation Bar ─────────────────────────── */
+.top-nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  gap: 20px;
+}
+.top-nav .logo {
+  flex-shrink: 0;
+}
+.top-nav .logo img {
+  height: 45px;
+  width: auto;
+  display: block;
+}
+
+/* ── Step Progress Tracker (lavishlounge-inspired) ─ */
+.nav-steps-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.nav-steps {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 5px 0;
+}
+.nav-steps .step {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  min-width: 60px;
+}
+.nav-steps .label {
+  display: block;
+  margin-top: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #bbb;
+  text-transform: uppercase;
+}
+
+/* Track line */
+.progress-line {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 11px;
+  height: 2px;
+  z-index: 0;
+  background: #ddd;
+}
+.progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #555;
+  transition: width 0.4s ease;
+}
+
+/* Circles */
+.nav-steps .circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #ddd;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 0; /* hide any text inside */
+}
+
+/* Active step */
+.nav-steps .step.active .circle {
+  border-color: #555;
+  background: #fff;
+}
+.nav-steps .step.active .circle::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #555;
+  border-radius: 50%;
+}
+.nav-steps .step.active .label {
+  color: #333;
+}
+
+/* Completed step */
+.nav-steps .step.completed .circle {
+  background: #555;
+  border-color: #555;
+}
+.nav-steps .step.completed .circle::before {
+  content: '✓';
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+.nav-steps .step.completed .label {
+  color: #333;
+}
+
+/* Step counter (e.g., 1/4) */
+.step-counter {
+  margin-left: 20px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* ── Common Section Headings ──────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.header h4 {
+  font-weight: bold;
+  color: #333;
+}
+.header p {
+  color: #666;
+}
+.header a {
+  color: #2596be;
+  text-decoration: none;
+}
+
+/* ── BHK Boxes (Home Interior Step 1) ─────────────── */
+.bhk-box {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+.bhk-box.active {
+  border-color: #2596be;
+}
+.bhk-radio {
+  accent-color: #2596be;
+  margin-right: 10px;
+}
+.sub-bhk {
+  display: none;
+  margin-top: 12px;
+  padding-left: 30px;
+  gap: 12px;
+}
+.sub-bhk.active {
+  display: flex;
+  flex-wrap: wrap;
+}
+.sub-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 14px;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.sub-card.active {
+  border: 2px solid #2596be;
+  background-color: #e9f6fb;
+}
+.toggle-icon {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font-size: 16px;
+}
+.toggle-icon::before {
+  content: "\25BC";
+  font-size: 12px;
+  color: #999;
+}
+.bhk-box.active .toggle-icon::before {
+  content: "\25B2";
+  color: #2596be;
+}
+
+/* ── Room Counters (Home Interior Step 2) ─────────── */
+.room-list {
+  max-width: 500px;
+  margin: auto;
+}
+.room-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin-bottom: 14px;
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.counter button {
+  background-color: #2596be;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.counter .count {
+  min-width: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* ── Layout Cards (Kitchen Step 1) ────────────────── */
+.layout-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.layout-card {
+  width: 180px;
+  min-height: 180px;
+  padding: 15px;
+  border-radius: 10px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid #eee;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.layout-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.layout-card.selected {
+  border-color: #2596be;
+  background-color: #e9f6fb;
+}
+.layout-icon {
+  font-size: 40px;
+  color: #555;
+  margin-bottom: 10px;
+}
+.layout-name {
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+/* ── Radio / Checkbox Inputs ──────────────────────── */
+.radio-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Measurement (Kitchen Step 2) ─────────────────── */
+.measurement-values {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.measurement-value {
+  text-align: center;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Package / Material Cards ─────────────────────── */
+.package-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.package-card {
+  display: block;
+  border: 2px solid #eee;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+}
+.package-card:hover {
+  transform: translateY(-5px);
+  border-color: #2596be;
+  box-shadow: 0 6px 16px rgba(37,150,190,0.2);
+}
+.radio-check {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #2596be;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+.radio-check::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #2596be;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.3s ease;
+}
+.radio-input:checked ~ .radio-check {
+  border-color: #2596be;
+  background-color: #2596be;
+}
+.radio-input:checked ~ .radio-check::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.radio-input:checked + .radio-check::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.package-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.package-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2596be;
+  margin-bottom: 10px;
+}
+.package-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+  min-height: 50px;
+}
+.package-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  color: #333;
+}
+.package-features li {
+  padding: 6px 0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.package-features li::before {
+  content: "✔";
+  color: #2596be;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* ── List Option Cards (Wardrobe radios) ──────────── */
+.list-option-card {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s;
+}
+.list-option-card:hover {
+  border-color: #2596be;
+}
+.list-option-card:has(> .radio-input:checked) {
+  border-color: #2596be;
+  background-color: #e9f6fb;
+}
+
+/* Inline Radio Circle */
+.inline-radio {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+.inline-radio .radio-circle {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+}
+.radio-input:checked ~ .inline-radio .radio-circle,
+.radio-input:checked ~ * .radio-circle {
+  border-color: #2596be;
+}
+.radio-input:checked ~ .inline-radio .radio-circle::after,
+.radio-input:checked ~ * .radio-circle::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #2596be;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ── Checkbox Card Styling (Accessories) ──────────── */
+.checkbox-check {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background: white;
+}
+.checkbox-input:checked ~ .checkbox-check {
+  background: #2596be;
+  border-color: #2596be;
+}
+.checkbox-input:checked ~ .checkbox-check::after {
+  content: "✓";
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ── Buttons ──────────────────────────────────────── */
+.btn-next,
+.butte {
+  background-color: #2596be !important;
+  color: white !important;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btn-next:hover,
+.butte:hover {
+  opacity: 0.85;
+}
+.btn-back,
+.btn-link.text-danger {
+  color: #2596be !important;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+.btn-back:hover,
+.btn-link.text-danger:hover {
+  text-decoration: underline !important;
+}
+
+/* ── Details Table (Price/Pro Tip) ─────────────────── */
+.details-table {
+  width: 100%;
+  font-size: 12px;
+  color: #555;
+  margin-top: 10px;
+}
+.details-table td {
+  padding: 4px 0;
+  vertical-align: top;
+}
+.details-table td:first-child {
+  font-weight: 600;
+  width: 60px;
+}
+
+/* ── Alert Banner ─────────────────────────────────── */
+.alert-banner {
+  background-color: #fcf4d9;
+  color: #8a6d3b;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* ── Footer Link ──────────────────────────────────── */
+.footer-link {
+  color: #2596be;
+  text-decoration: none;
+}
+
+/* ── Misc ─────────────────────────────────────────── */
+.lecet {
+  padding-left: 4px;
+}
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+}

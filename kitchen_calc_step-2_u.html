@@ -1,0 +1,492 @@
+
+
+<!-- HTML form remains the same as before, just remove the calculation summary section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi Step Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/calculator.css" rel="stylesheet">
+  
+  
+</head>
+<body>
+  <div class="top-nav">
+    <div class="logo">
+      <a href="index.html"><img src="assets/logo.png" alt="Ionic Interiors Logo"></a>
+    </div>
+    <div class="nav-steps-container">
+      <div class="nav-steps">
+        <div class="progress-line">
+          <div class="progress-fill" style="width: 33%;"></div>
+        </div>
+        <div class="step completed">
+          <div class="circle"></div>
+          <div class="label">SHAPED</div>
+        </div>
+        <div class="step active">
+          <div class="circle"></div>
+          <div class="label">MEASUREMENT</div>
+        </div>
+        <div class="step ">
+          <div class="circle"></div>
+          <div class="label">PACKAGE</div>
+        </div>
+        <div class="step ">
+          <div class="circle"></div>
+          <div class="label">GET QUOTE</div>
+        </div>
+      </div>
+      <div class="step-counter">2/4</div>
+    </div>
+  </div>
+
+  <div class="container mt-5" style="max-width: 700px;">
+    <!-- Step 1 -->
+    <form id="step1" method="get" action="kitchen_calc_step-2_u.html" class="card border-0 hidden">
+      <div class="header">
+        <h4>Select the layout of your kitchen</h4>
+        <p>Want to know more. <a href="#">Check here</a></p>
+      </div>
+      <div class="layout-options">
+  <!-- L-shaped Option -->
+  <label class="layout-card">
+    <input type="radio" class="radio-input" name="kitchen_layout" value="L-shaped" required>
+    <div class="layout-icon">
+      <svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+        <!-- Wall A -->
+        <rect x="30" y="30" width="90" height="20" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+        <!-- Wall B -->
+        <rect x="30" y="30" width="20" height="90" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+        
+        <!-- Arrows for Wall A -->
+        <line x1="30" y1="20" x2="120" y2="20" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+        <text x="75" y="15" font-size="14" fill="#333" text-anchor="middle">A</text>
+        
+        <!-- Arrows for Wall B -->
+        <line x1="20" y1="30" x2="20" y2="120" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+        <text x="10" y="75" font-size="14" fill="#333" text-anchor="middle" transform="rotate(-90,10,75)">B</text>
+        
+        <!-- Stove -->
+        <rect x="30" y="70" width="20" height="30" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <circle cx="37" cy="80" r="3" stroke="#333" fill="none"/>
+        <circle cx="43" cy="80" r="3" stroke="#333" fill="none"/>
+        <circle cx="37" cy="90" r="3" stroke="#333" fill="none"/>
+        <circle cx="43" cy="90" r="3" stroke="#333" fill="none"/>
+        
+        <!-- Sink -->
+        <rect x="70" y="30" width="30" height="15" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <circle cx="77" cy="37" r="3" stroke="#333" fill="none"/>
+        <circle cx="85" cy="37" r="3" stroke="#333" fill="none"/>
+        <circle cx="93" cy="37" r="3" stroke="#333" fill="none"/>
+        
+        <!-- Arrow marker definition -->
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L10,5 L0,10 L2,5 z" fill="#333" />
+          </marker>
+        </defs>
+      </svg>
+    </div>
+    <div class="layout-name">L-shaped</div>
+  </label>
+  
+  <!-- Straight Option -->
+  <label class="layout-card">
+    <input type="radio" class="radio-input" name="kitchen_layout" value="Straight" required>
+    <div class="layout-icon">
+      <svg width="160" height="100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Arrow marker definition -->
+        <defs>
+          <marker id="arrow-straight" markerWidth="10" markerHeight="10" refX="5" refY="5"
+                  orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L10,5 L0,10 L2,5 Z" fill="#333"/>
+          </marker>
+        </defs>
+
+        <!-- Counter -->
+        <rect x="20" y="40" width="120" height="20" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+        
+        <!-- Stove -->
+        <rect x="30" y="40" width="25" height="20" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <circle cx="37" cy="50" r="3" stroke="#333" fill="none"/>
+        <circle cx="43" cy="50" r="3" stroke="#333" fill="none"/>
+        <circle cx="37" cy="56" r="3" stroke="#333" fill="none"/>
+        <circle cx="43" cy="56" r="3" stroke="#333" fill="none"/>
+        
+        <!-- Sink -->
+        <rect x="80" y="40" width="30" height="12" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <circle cx="87" cy="46" r="3" stroke="#333" fill="none"/>
+        <circle cx="95" cy="46" r="3" stroke="#333" fill="none"/>
+        <circle cx="103" cy="46" r="3" stroke="#333" fill="none"/>
+        
+        <!-- Arrows for Wall A -->
+        <line x1="20" y1="30" x2="140" y2="30" stroke="#333" stroke-width="1.5" 
+              marker-end="url(#arrow-straight)" marker-start="url(#arrow-straight)"/>
+        <text x="80" y="25" font-size="14" fill="#333" text-anchor="middle">A</text>
+      </svg>
+    </div>
+    <div class="layout-name">Straight</div>
+  </label>
+  
+  <!-- U-shaped Option -->
+  <label class="layout-card">
+    <input type="radio" class="radio-input" name="kitchen_layout" value="U-shaped" required>
+    <div class="layout-icon">
+      <svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+        <!-- Left wall -->
+        <rect x="30" y="30" width="20" height="90" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+        <!-- Top wall -->
+        <rect x="50" y="30" width="70" height="20" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+        <!-- Right wall -->
+        <rect x="120" y="30" width="20" height="90" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+        
+        <!-- Stove -->
+        <rect x="30" y="70" width="20" height="30" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <circle cx="37" cy="80" r="3" stroke="#333" fill="none"/>
+        <circle cx="43" cy="80" r="3" stroke="#333" fill="none"/>
+        <circle cx="37" cy="90" r="3" stroke="#333" fill="none"/>
+        <circle cx="43" cy="90" r="3" stroke="#333" fill="none"/>
+        
+        <!-- Sink -->
+        <rect x="70" y="30" width="30" height="15" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <circle cx="77" cy="37" r="3" stroke="#333" fill="none"/>
+        <circle cx="85" cy="37" r="3" stroke="#333" fill="none"/>
+        <circle cx="93" cy="37" r="3" stroke="#333" fill="none"/>
+        
+        <!-- Arrows for Wall A -->
+        <line x1="30" y1="20" x2="140" y2="20" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+        <text x="85" y="15" font-size="14" fill="#333" text-anchor="middle">A</text>
+        
+        <!-- Arrows for Wall B -->
+        <line x1="20" y1="30" x2="20" y2="120" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+        <text x="10" y="75" font-size="14" fill="#333" text-anchor="middle" transform="rotate(-90,10,75)">B</text>
+        
+        <!-- Arrows for Wall C -->
+        <line x1="110" y1="60" x2="110" y2="120" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+        <text x="145" y="25" font-size="14" fill="#333" text-anchor="middle" transform="rotate(-90,155,75)">C</text>
+        
+        <!-- Arrow marker definition -->
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L10,5 L0,10 L2,5 z" fill="#333" />
+          </marker>
+        </defs>
+      </svg>
+    </div>
+    <div class="layout-name">U-shaped</div>
+  </label>
+
+  <!-- Parallel Option -->
+  <label class="layout-card">
+    <input type="radio" class="radio-input" name="kitchen_layout" value="Parallel" required>
+    <div class="layout-icon">
+      <svg width="160" height="120" xmlns="http://www.w3.org/2000/svg">
+        <!-- Top counter -->
+        <rect x="20" y="30" width="120" height="20" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+        <!-- Bottom counter -->
+        <rect x="20" y="70" width="120" height="20" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+        
+        <!-- Stove -->
+        <rect x="30" y="70" width="25" height="20" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <circle cx="37" cy="80" r="3" stroke="#333" fill="none"/>
+        <circle cx="43" cy="80" r="3" stroke="#333" fill="none"/>
+        <circle cx="37" cy="86" r="3" stroke="#333" fill="none"/>
+        <circle cx="43" cy="86" r="3" stroke="#333" fill="none"/>
+        
+        <!-- Sink -->
+        <rect x="70" y="30" width="30" height="15" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <circle cx="77" cy="37" r="3" stroke="#333" fill="none"/>
+        <circle cx="85" cy="37" r="3" stroke="#333" fill="none"/>
+        <circle cx="93" cy="37" r="3" stroke="#333" fill="none"/>
+        
+        <!-- Arrows for Wall A -->
+        <line x1="20" y1="20" x2="140" y2="20" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+        <text x="80" y="15" font-size="14" fill="#333" text-anchor="middle">A</text>
+        
+        <!-- Arrows for Wall B -->
+        <line x1="20" y1="100" x2="140" y2="100" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+        <text x="80" y="115" font-size="14" fill="#333" text-anchor="middle">B</text>
+        
+        <!-- Arrow marker definition -->
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L10,5 L0,10 L2,5 z" fill="#333" />
+          </marker>
+        </defs>
+      </svg>
+    </div>
+    <div class="layout-name">Parallel</div>
+  </label>
+</div>
+
+
+
+      <div class="d-flex justify-content-end mt-4 sticky-bottom bg-white py-3" style="z-index: 1020;">
+        <button type="submit" name="step1" class="btn butte px-4 rounded-pill fw-bold">NEXT</button>
+      </div>
+
+    </form>
+
+    <!-- Step 2 -->
+    <form id="step2" method="get" action="kitchen_calc_step-3.html" class="card p-4 border-0 ">
+      <h4 class="text-center fw-bold mb-4">Select Your Size</h4>
+      
+      <div class="measurement-values">
+        <div class="measurement-value" id="measurement_A_wrapper">
+          <span class="mt-1 ms-2"><b>A</b></span>
+          <select class="form-select ms-2" name="measurement_A">
+            <option value="4" >4</option>
+            <option value="5" >5</option>
+            <option value="6" >6</option>
+            <option value="7" >7</option>
+            <option value="8" >8</option>
+            <option value="9" >9</option>
+            <option value="10" >10</option>
+          </select>
+          <span class="mt-1 ms-2">ft.</span>
+        </div>
+
+        <div class="measurement-value" id="measurement_B_wrapper">
+          <span class="mt-1 ms-2"><b>B</b></span>
+          <select class="form-select ms-2" name="measurement_B">
+            <option value="4" >4</option>
+            <option value="5" >5</option>
+            <option value="6" >6</option>
+            <option value="7" >7</option>
+            <option value="8" >8</option>
+            <option value="9" >9</option>
+            <option value="10" >10</option>
+          </select>
+          <span class="mt-1 ms-2">ft.</span>
+        </div>
+
+        <div class="measurement-value" id="measurement_C_wrapper">
+          <span class="mt-1 ms-2"><b>C</b></span>
+          <select class="form-select ms-2" name="measurement_C">
+            <option value="4" >4</option>
+            <option value="5" >5</option>
+            <option value="6" >6</option>
+            <option value="7" >7</option>
+            <option value="8" >8</option>
+            <option value="9" >9</option>
+            <option value="10" >10</option>
+          </select>
+          <span class="mt-1 ms-2">ft.</span>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between mt-4 sticky-bottom bg-white py-3" style="z-index: 1020;">
+        <button type="button" class="btn btn-link text-danger fw-bold" onclick="window.location.href='kitchen_calc_step-1.html'">BACK</button>
+        <button type="submit" name="step2" class="btn butte px-4 rounded-pill fw-bold">NEXT</button>
+      </div>
+    </form>
+
+    <!-- Step 3 -->
+    <form id="step3" method="get" action="kitchen_calc_step-4.html" class="card p-4 border-0 hidden">
+      <h4 class="text-center fw-bold mb-4">Select Your Package</h4>
+
+      <div class="package-container">
+
+        <!-- Essentials (₹) Card -->
+        <label class="package-card">
+          <input type="radio" name="package" value="Essentials" class="radio-input" 
+             required>
+          <span class="radio-check"></span>
+          <img src="../svg/19.jpg" alt="Essentials Interior" class="package-image">
+          <h3 class="package-title">Essentials (₹)</h3>
+          <p class="package-description">
+            Smart and practical kitchen interiors designed to fit your budget without compromising on quality.
+          </p>
+          <ul class="package-features ulh">
+            <li>Budget‑friendly finishes</li>
+            <li>Space‑saving modular layouts</li>
+            <li>Durable & functional hardware</li>
+          </ul>
+        </label>
+
+        <!-- Premium (₹₹) Card -->
+        <label class="package-card">
+          <input type="radio" name="package" value="Premium" class="radio-input" 
+            >
+          <span class="radio-check"></span>
+          <img src="../svg/Peachy.jpg" alt="Premium Interior" class="package-image">
+          <h3 class="package-title">Premium (₹₹)</h3>
+          <p class="package-description">
+            Elegant kitchens with personalized designs, superior finishes, and more storage flexibility.
+          </p>
+          <ul class="package-features ulh">
+            <li>High‑quality laminates & finishes</li>
+            <li>Customized storage solutions</li>
+            <li>Premium fittings & accessories</li>
+          </ul>
+        </label>
+
+        <!-- Luxe (₹₹₹) Card -->
+        <label class="package-card">
+          <input type="radio" name="package" value="Luxe" class="radio-input" 
+            >
+          <span class="radio-check"></span>
+          <img src="../svg/20.jpg" alt="Luxe Interior" class="package-image">
+          <h3 class="package-title">Luxe (₹₹₹)</h3>
+          <p class="package-description">
+            Ultra‑luxury kitchen interiors crafted with exclusive materials and designer concepts.
+          </p>
+          <ul class="package-features ulh">
+            <li>Imported luxury finishes</li>
+            <li>Designer modular concepts</li>
+            <li>Elite appliances & smart storage</li>
+          </ul>
+        </label>
+
+      </div>
+
+      <div class="d-flex justify-content-between mt-4 sticky-bottom bg-white py-3" style="z-index: 1020;">
+        <button type="button" class="btn btn-link text-danger fw-bold" onclick="window.location.href='kitchen_calc_step-2_u.html'">BACK</button>
+        <button type="submit" name="step3" class="btn butte px-4 rounded-pill fw-bold">NEXT</button>
+      </div>
+    </form>
+
+    <!-- Step 4 -->
+    <form id="step4" method="get" action="" class="card p-4 border-0 hidden" >
+    <h4 class="text-center fw-bold mb-4" style="color: #2596be;">Your estimate is almost ready</h4>
+
+    <div class="mb-3 position-relative lecet">
+      <input type="text" name="name" class="form-control py-2 px-3" placeholder="Name" required style="border: 1px solid #e0e0e0; border-radius: 8px;">
+      
+    </div>
+
+    <div class="mb-3 position-relative lecet">
+      <input type="email" name="email" class="form-control py-2 px-3" placeholder="Email ID" required style="border: 1px solid #e0e0e0; border-radius: 8px;">
+      
+    </div>
+
+    <div class="mb-3 d-flex align-items-center position-relative" style="border: 1px solid #e0e0e0; border-radius: 8px; padding-left: 12px;">
+      <span class="me-2"><img src="https://flagcdn.com/w40/in.png" alt="IN" width="20"></span>
+      
+      <input type="tel" name="phone" class="form-control border-0 py-2 px-0" placeholder="Phone number" pattern="\d{10}" maxlength="10" minlength="10" required oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+    </div>
+
+    <div class="form-check mb-3 ps-0">
+      <div class="d-flex align-items-center">
+        <input class="form-check-input me-2" name="whatsapp_updates" type="checkbox" id="whatsappUpdates" checked style="background-color: #2596be; border-color: #2596be; width: 1.2em; height: 1.2em;">
+        <label class="form-check-label" for="whatsappUpdates" style="color: #555;">
+          Send me updates on WhatsApp
+        </label>
+      </div>
+    </div>
+
+    <div class="mb-3 position-relative lecet">
+      <input type="text" name="property_name" class="form-control py-2 px-3" placeholder="Property Name" style="border: 1px solid #e0e0e0; border-radius: 8px;">
+      
+    </div>
+
+    <div class="text-muted small mt-3" style="color: #666;">
+      By submitting this form, you agree to the 
+      <a href="terms-and-conditions.html" class="footer-link">Terms and Conditions</a> &
+    <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>.
+    </div>
+
+    <div class="d-flex justify-content-between mt-4 sticky-bottom py-3" style="background: white; z-index: 1020; border-top: 1px solid #f0f0f0;">
+      <button type="button" class="btn btn-outline-secondary px-4" onclick="window.location.href='kitchen_calc_step-3.html'" style="border-radius: 8px; border-color: #2596be; color: #2596be;">
+        BACK
+      </button>
+      <button type="submit" name="step4" class="btn px-4 fw-bold" style="background: #2596be; color: white; border-radius: 8px;">
+        SUBMIT
+      </button>
+    </div>
+  </form>
+  </div>
+
+  <script>
+    // Add selection styling when layout cards are clicked
+    document.querySelectorAll('.layout-card').forEach(card => {
+      card.addEventListener('click', function() {
+        // Remove selection from all cards
+        document.querySelectorAll('.layout-card').forEach(c => {
+          c.classList.remove('selected');
+        });
+        // Add selection to clicked card
+        this.classList.add('selected');
+      });
+    });
+
+    // Save selected layout on change (Step 1)
+    document.querySelectorAll('input[name="kitchen_layout"]').forEach(radio => {
+      radio.addEventListener('change', function () {
+        sessionStorage.setItem('kitchen_layout', this.value);
+      });
+    });
+
+    // On Step 2 load
+    document.addEventListener("DOMContentLoaded", function () {
+      const layout = sessionStorage.getItem('kitchen_layout');
+
+      const a = document.getElementById('measurement_A_wrapper');
+      const b = document.getElementById('measurement_B_wrapper');
+      const c = document.getElementById('measurement_C_wrapper');
+
+      if (!layout) {
+        // Default case — show all
+        a.style.display = 'flex';
+        b.style.display = 'flex';
+        c.style.display = 'flex';
+        return;
+      }
+
+      if (layout === 'Straight') {
+        a.style.display = 'flex';
+        b.style.display = 'none';
+        c.style.display = 'none';
+      } else if (layout === 'L-shaped') {
+        a.style.display = 'flex';
+        b.style.display = 'flex';
+        c.style.display = 'none';
+      } else if (layout === 'U-shaped') {
+        a.style.display = 'flex';
+        b.style.display = 'flex';
+        c.style.display = 'flex';
+      } else {
+        // fallback
+        a.style.display = 'flex';
+        b.style.display = 'flex';
+        c.style.display = 'none';
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const steps = document.querySelectorAll('.nav-steps .step');
+      if (!steps.length) return;
+      let last = 0;
+      steps.forEach((s, i) => {
+        if (s.classList.contains('active') || s.classList.contains('completed') || (s.querySelector('.circle') && s.querySelector('.circle').classList.contains('active'))) {
+          last = i;
+        }
+      });
+      const fill = document.querySelector('.progress-fill');
+      if (!fill) return;
+      const pct = (steps.length > 1) ? (last / (steps.length - 1)) * 100 : 0;
+      fill.style.width = pct + '%';
+    });
+  </script>
+</body>
+</html>

@@ -22,11 +22,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Multi Step Form</title>
+  <title>Kitchen Calculator - Your Estimate | Ionic Interiors</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/calculator.css" rel="stylesheet">
-  
-  
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ionic-accent:#8b124c; --ionic-blue:#2596be; --ionic-ink:#1f1b16; --ionic-muted:#6f665d; --ionic-bg:#faf8f5; }
+    body { font-family:"Manrope",sans-serif; }
+    .estimate-hero { text-align:center; padding:48px 20px 28px; border-bottom:1px solid #f0ece8; }
+    .estimate-badge { display:inline-flex; align-items:center; gap:8px; background:#eaf7f0; color:#1d8a55; font-size:13px; font-weight:600; padding:6px 16px; border-radius:999px; margin-bottom:18px; }
+    .estimate-badge svg { width:18px; height:18px; fill:#1d8a55; }
+    .estimate-label { font-size:13px; font-weight:600; color:var(--ionic-muted); letter-spacing:.5px; text-transform:uppercase; margin-bottom:6px; }
+    .estimate-price { font-family:"Marcellus",serif; font-size:clamp(34px,8vw,50px); color:#1d8a55; line-height:1.1; margin-bottom:10px; }
+    .estimate-note { display:inline-block; font-size:13px; color:#888; background:#f5f5f5; padding:5px 14px; border-radius:6px; margin-bottom:16px; }
+    .estimate-summary-link { font-size:13px; color:var(--ionic-blue); text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; }
+    .summary-panel { display:none; background:var(--ionic-bg); border-radius:12px; padding:20px 24px; margin:16px 20px 0; text-align:left; }
+    .summary-panel.open { display:block; }
+    .summary-row { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee; font-size:14px; }
+    .summary-row:last-child { border-bottom:none; }
+    .summary-row span:first-child { color:var(--ionic-muted); }
+    .summary-row span:last-child { font-weight:600; color:var(--ionic-ink); }
+    .cta-banner { background:var(--ionic-bg); padding:32px 20px; text-align:center; }
+    .cta-banner h2 { font-family:"Marcellus",serif; font-size:clamp(20px,4vw,26px); color:var(--ionic-ink); margin-bottom:8px; }
+    .cta-banner p { color:var(--ionic-muted); font-size:14px; margin-bottom:22px; }
+    .free-badge { display:inline-block; background:#1d8a55; color:#fff; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; margin:0 4px; vertical-align:middle; }
+    .btn-quote { display:inline-block; background:var(--ionic-accent); color:#fff !important; font-family:"Manrope",sans-serif; font-weight:700; font-size:15px; letter-spacing:1px; text-transform:uppercase; padding:14px 40px; border-radius:999px; text-decoration:none !important; transition:transform .2s,box-shadow .2s; box-shadow:0 4px 20px rgba(139,18,76,.25); }
+    .btn-quote:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(139,18,76,.35); }
+    .trust-section { padding:32px 20px 48px; border-top:1px solid #f0ece8; }
+    .trust-section h3 { font-family:"Marcellus",serif; font-size:20px; color:var(--ionic-ink); margin-bottom:24px; text-align:center; }
+    .trust-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:20px; max-width:600px; margin:0 auto; }
+    .trust-item { display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center; }
+    .trust-icon { width:60px; height:60px; background:#f5f0ec; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+    .trust-icon svg { width:28px; height:28px; }
+    .trust-item p { font-size:12px; font-weight:600; color:var(--ionic-ink); margin:0; line-height:1.4; }
+  </style>
 </head>
 <body>
   <div class="top-nav">
@@ -365,56 +394,125 @@
       </div>
     </form>
 
-    <!-- Step 4 -->
-    <form id="step4" method="get" action="" class="card p-4 border-0 " >
-    <h4 class="text-center fw-bold mb-4" style="color: #2596be;">Your estimate is almost ready</h4>
+    <!-- Step 4 – Estimate Results -->
+    <div id="step4" class="card border-0">
 
-    <div class="mb-3 position-relative lecet">
-      <input type="text" name="name" class="form-control py-2 px-3" placeholder="Name" required style="border: 1px solid #e0e0e0; border-radius: 8px;">
-      
-    </div>
-
-    <div class="mb-3 position-relative lecet">
-      <input type="email" name="email" class="form-control py-2 px-3" placeholder="Email ID" required style="border: 1px solid #e0e0e0; border-radius: 8px;">
-      
-    </div>
-
-    <div class="mb-3 d-flex align-items-center position-relative" style="border: 1px solid #e0e0e0; border-radius: 8px; padding-left: 12px;">
-      <span class="me-2"><img src="https://flagcdn.com/w40/in.png" alt="IN" width="20"></span>
-      
-      <input type="tel" name="phone" class="form-control border-0 py-2 px-0" placeholder="Phone number" pattern="\d{10}" maxlength="10" minlength="10" required oninput="this.value=this.value.replace(/[^0-9]/g,'');">
-    </div>
-
-    <div class="form-check mb-3 ps-0">
-      <div class="d-flex align-items-center">
-        <input class="form-check-input me-2" name="whatsapp_updates" type="checkbox" id="whatsappUpdates" checked style="background-color: #2596be; border-color: #2596be; width: 1.2em; height: 1.2em;">
-        <label class="form-check-label" for="whatsappUpdates" style="color: #555;">
-          Send me updates on WhatsApp
-        </label>
+      <!-- Estimate Hero -->
+      <div class="estimate-hero">
+        <div class="estimate-badge">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Estimate Ready
+        </div>
+        <div class="estimate-label">Here's your estimated budget range</div>
+        <div class="estimate-price" id="priceDisplay">₹—</div>
+        <div class="estimate-note">This isn't a final quote and can be customised to suit your needs.</div>
+        <br>
+        <button class="estimate-summary-link" onclick="toggleSummary()">View detailed summary ↓</button>
       </div>
-    </div>
 
-    <div class="mb-3 position-relative lecet">
-      <input type="text" name="property_name" class="form-control py-2 px-3" placeholder="Property Name" style="border: 1px solid #e0e0e0; border-radius: 8px;">
-      
-    </div>
+      <!-- Summary Panel -->
+      <div class="summary-panel" id="summaryPanel">
+        <div class="summary-row"><span>Kitchen Layout</span><span id="sum-layout">—</span></div>
+        <div class="summary-row"><span>Total Length</span><span id="sum-size">—</span></div>
+        <div class="summary-row"><span>Package</span><span id="sum-pkg">—</span></div>
+      </div>
 
-    <div class="text-muted small mt-3" style="color: #666;">
-      By submitting this form, you agree to the 
-      <a href="terms-and-conditions.html" class="footer-link">Terms and Conditions</a> &
-    <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>.
-    </div>
+      <!-- CTA Banner -->
+      <div class="cta-banner">
+        <h2>Want an accurate quote?</h2>
+        <p>Book a <span class="free-badge">FREE</span> consultation with our designer to get<br>a detailed quote for your kitchen.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdow82wqDy0WsF0cVjn0FDZg_DLJ7lHvjIBsf4mDQeBbu6B-A/viewform?usp=header" target="_blank" class="btn-quote">
+          GET DETAILED QUOTE
+        </a>
+      </div>
 
-    <div class="d-flex justify-content-between mt-4 sticky-bottom py-3" style="background: white; z-index: 1020; border-top: 1px solid #f0f0f0;">
-      <button type="button" class="btn btn-outline-secondary px-4" onclick="window.location.href='kitchen_calc_step-3.html'" style="border-radius: 8px; border-color: #2596be; color: #2596be;">
-        BACK
-      </button>
-      <button type="submit" name="step4" class="btn px-4 fw-bold" style="background: #2596be; color: white; border-radius: 8px;">
-        SUBMIT
-      </button>
+      <!-- Trust Badges -->
+      <div class="trust-section">
+        <h3>Why choose us</h3>
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#8b124c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                <path d="M8 14h.01M12 14h.01M16 14h.01"/>
+              </svg>
+            </div>
+            <p>45 day move-in<br>guarantee*</p>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#8b124c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <p>Flat 10-year<br>warranty**</p>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#8b124c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+              </svg>
+            </div>
+            <p>146 quality<br>checks</p>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#8b124c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+              </svg>
+            </div>
+            <p>Easy<br>EMI's</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </form>
   </div>
+
+  <script>
+    // ── Pricing Config (per linear foot of counter) ──
+    const RATE_PER_FT = { Essentials: 18000, Premium: 28000, Luxe: 42000 };
+    const LAYOUT_SURCHARGE = { "Straight": 0, "L-shaped": 15000, "Parallel": 20000, "U-shaped": 30000 };
+    const MARGIN = 0.3;
+
+    function fmt(n) {
+      if (n >= 10000000) return "₹" + (n/10000000).toFixed(1).replace(/\.0$/,'') + "Cr";
+      if (n >= 100000)  return "₹" + (n/100000).toFixed(1).replace(/\.0$/,'') + "L";
+      return "₹" + Math.round(n/1000) + "K";
+    }
+
+    function getP(k) { return new URLSearchParams(window.location.search).get(k) || sessionStorage.getItem(k) || ""; }
+
+    function calcPrice() {
+      const layout = getP("kitchen_layout") || "L-shaped";
+      const pkg    = getP("package")        || "Essentials";
+      const mA     = parseInt(getP("measurement_A")) || 6;
+      const mB     = parseInt(getP("measurement_B")) || 0;
+      const mC     = parseInt(getP("measurement_C")) || 0;
+      const totalFt = mA + mB + mC;
+
+      const rate   = RATE_PER_FT[pkg] || 18000;
+      const total  = (totalFt * rate) + (LAYOUT_SURCHARGE[layout] || 0);
+
+      const lo = Math.round(total * (1 - MARGIN) / 5000) * 5000;
+      const hi = Math.round(total * (1 + MARGIN) / 5000) * 5000;
+
+      document.getElementById("priceDisplay").textContent = fmt(lo) + " – " + fmt(hi);
+      document.getElementById("sum-layout").textContent   = layout;
+      document.getElementById("sum-pkg").textContent      = pkg;
+      const sizeStr = [mA, mB, mC].filter(Boolean).join("ft + ") + "ft";
+      document.getElementById("sum-size").textContent     = sizeStr + " (" + totalFt + "ft total)";
+    }
+
+    function toggleSummary() {
+      const p = document.getElementById("summaryPanel");
+      p.classList.toggle("open");
+      document.querySelector(".estimate-summary-link").textContent =
+        p.classList.contains("open") ? "Hide summary ↑" : "View detailed summary ↓";
+    }
+
+    calcPrice();
+  </script>
 
   <script>
     // Add selection styling when layout cards are clicked

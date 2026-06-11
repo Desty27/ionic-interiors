@@ -3,9 +3,198 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wardrobe Calculator - Get Quote</title>
+  <title>Wardrobe Calculator - Your Estimate | Ionic Interiors</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/calculator.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ionic-accent: #8b124c;
+      --ionic-blue: #2596be;
+      --ionic-ink: #1f1b16;
+      --ionic-muted: #6f665d;
+      --ionic-bg: #faf8f5;
+    }
+
+    body { background: #fff; font-family: "Manrope", sans-serif; }
+
+    /* ── Estimate Hero ── */
+    .estimate-hero {
+      text-align: center;
+      padding: 48px 20px 32px;
+      border-bottom: 1px solid #f0ece8;
+    }
+    .estimate-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eaf7f0;
+      color: #1d8a55;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .estimate-badge svg { width: 18px; height: 18px; fill: #1d8a55; }
+    .estimate-label {
+      font-family: "Manrope", sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ionic-muted);
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .estimate-price {
+      font-family: "Marcellus", serif;
+      font-size: clamp(36px, 8vw, 52px);
+      color: #1d8a55;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    .estimate-note {
+      display: inline-block;
+      font-size: 13px;
+      color: #888;
+      background: #f5f5f5;
+      padding: 5px 14px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+    .estimate-summary-link {
+      font-size: 13px;
+      color: var(--ionic-blue);
+      text-decoration: underline;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    /* ── Summary Accordion ── */
+    .summary-panel {
+      display: none;
+      background: var(--ionic-bg);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 16px 20px 0;
+      text-align: left;
+    }
+    .summary-panel.open { display: block; }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+    }
+    .summary-row:last-child { border-bottom: none; }
+    .summary-row span:first-child { color: var(--ionic-muted); }
+    .summary-row span:last-child { font-weight: 600; color: var(--ionic-ink); }
+
+    /* ── CTA Banner ── */
+    .cta-banner {
+      background: var(--ionic-bg);
+      padding: 32px 20px;
+      text-align: center;
+      margin-top: 0;
+    }
+    .cta-banner h2 {
+      font-family: "Marcellus", serif;
+      font-size: clamp(20px, 4vw, 26px);
+      color: var(--ionic-ink);
+      margin-bottom: 8px;
+    }
+    .cta-banner p {
+      color: var(--ionic-muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+    .free-badge {
+      display: inline-block;
+      background: #1d8a55;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin: 0 4px;
+      vertical-align: middle;
+    }
+    .btn-quote {
+      display: inline-block;
+      background: var(--ionic-accent);
+      color: #fff !important;
+      font-family: "Manrope", sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 14px 40px;
+      border-radius: 999px;
+      text-decoration: none !important;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(139,18,76,0.25);
+    }
+    .btn-quote:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(139,18,76,0.35);
+    }
+
+    /* ── Trust Badges ── */
+    .trust-section {
+      padding: 32px 20px 48px;
+      border-top: 1px solid #f0ece8;
+    }
+    .trust-section h3 {
+      font-family: "Marcellus", serif;
+      font-size: 20px;
+      color: var(--ionic-ink);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+    .trust-icon {
+      width: 60px;
+      height: 60px;
+      background: #f5f0ec;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .trust-icon svg { width: 28px; height: 28px; }
+    .trust-item p {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ionic-ink);
+      margin: 0;
+      line-height: 1.4;
+    }
+    .trust-item small {
+      font-size: 11px;
+      color: var(--ionic-muted);
+    }
+
+    .back-btn {
+      margin: 24px 20px 0;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
 
@@ -14,90 +203,175 @@
     <div class="logo">
       <a href="index.html"><img src="assets/logo.png" alt="Ionic Interiors Logo"></a>
     </div>
-    
     <div class="nav-steps-container">
       <div class="nav-steps">
         <div class="progress-line">
           <div class="progress-fill" style="width: 100%;"></div>
         </div>
-        
-        <div class="step completed">
-          <div class="circle"></div>
-          <div class="label">LENGTH</div>
-        </div>
-        <div class="step completed">
-          <div class="circle"></div>
-          <div class="label">TYPE</div>
-        </div>
-        <div class="step completed">
-          <div class="circle"></div>
-          <div class="label">FINISH</div>
-        </div>
-        <div class="step completed">
-          <div class="circle"></div>
-          <div class="label">MATERIAL</div>
-        </div>
-        <div class="step completed">
-          <div class="circle"></div>
-          <div class="label">ACCESSORIES</div>
-        </div>
-        <div class="step active">
-          <div class="circle"></div>
-          <div class="label">GET QUOTE</div>
-        </div>
+        <div class="step completed"><div class="circle"></div><div class="label">LENGTH</div></div>
+        <div class="step completed"><div class="circle"></div><div class="label">TYPE</div></div>
+        <div class="step completed"><div class="circle"></div><div class="label">FINISH</div></div>
+        <div class="step completed"><div class="circle"></div><div class="label">MATERIAL</div></div>
+        <div class="step completed"><div class="circle"></div><div class="label">ACCESSORIES</div></div>
+        <div class="step active"><div class="circle"></div><div class="label">ESTIMATE</div></div>
       </div>
       <div class="step-counter">6/6</div>
     </div>
   </div>
 
-  <div class="container mt-5" style="max-width: 600px;">
-    <form id="step6" method="post" action="submit_wardrobe_quote.php" class="card border-0 p-4 shadow-sm" style="border-radius: 12px;">
-      
-      <div class="header mb-4">
-        <h4 class="fw-bold text-dark" style="color: #2596be !important;">Your estimate is almost ready</h4>
-      </div>
+  <div style="max-width: 640px; margin: 0 auto;">
 
-      <div class="mb-3 position-relative">
-        <input type="text" name="name" class="form-control py-2 px-3" placeholder="Name" required style="border: 1px solid #e0e0e0; border-radius: 8px;">
-      </div>
+    <!-- Back button -->
+    <a href="wardrobe_calc_step-5.html" class="back-btn" style="color: var(--ionic-muted); font-size: 14px; text-decoration: none;">
+      ← Back
+    </a>
 
-      <div class="mb-3 position-relative">
-        <input type="email" name="email" class="form-control py-2 px-3" placeholder="Email ID" required style="border: 1px solid #e0e0e0; border-radius: 8px;">
+    <!-- Estimate Hero -->
+    <div class="estimate-hero">
+      <div class="estimate-badge">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Estimate Ready
       </div>
+      <div class="estimate-label">Here's your estimated budget range</div>
+      <div class="estimate-price" id="priceDisplay">₹—</div>
+      <div class="estimate-note">This isn't a final quote and can be customised to suit your needs.</div>
+      <br>
+      <button class="estimate-summary-link" onclick="toggleSummary()">View detailed summary ↓</button>
+    </div>
 
-      <div class="mb-3 d-flex align-items-center position-relative" style="border: 1px solid #e0e0e0; border-radius: 8px; padding-left: 12px; overflow: hidden;">
-        <span class="me-2"><img src="https://flagcdn.com/w40/in.png" alt="IN" width="20"></span>
-        <input type="tel" name="phone" class="form-control border-0 py-2 px-0" placeholder="Phone number" pattern="\d{10}" maxlength="10" minlength="10" required oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+    <!-- Summary Panel -->
+    <div class="summary-panel" id="summaryPanel">
+      <div class="summary-row">
+        <span>Wardrobe Length</span>
+        <span id="sum-length">—</span>
       </div>
-
-      <div class="form-check mb-3 ps-0 d-flex align-items-center">
-        <input class="form-check-input me-2 mt-0" name="whatsapp_updates" type="checkbox" id="whatsappUpdates" checked style="background-color: #2596be; border-color: #2596be; width: 1.2em; height: 1.2em;">
-        <label class="form-check-label text-muted" for="whatsappUpdates">
-          Send me updates on WhatsApp
-        </label>
+      <div class="summary-row">
+        <span>Wardrobe Type</span>
+        <span id="sum-type">—</span>
       </div>
-
-      <div class="mb-3 position-relative">
-        <input type="text" name="property_name" class="form-control py-2 px-3" placeholder="Property Name" style="border: 1px solid #e0e0e0; border-radius: 8px;">
+      <div class="summary-row">
+        <span>Finish</span>
+        <span id="sum-finish">—</span>
       </div>
-
-      <div class="text-muted small mt-3 text-center">
-        By submitting this form, you agree to the 
-        <a href="terms-and-conditions.html" class="text-decoration-none" style="color: #2596be;">Terms and Conditions</a> &
-        <a href="privacy-policy.html" class="text-decoration-none" style="color: #2596be;">Privacy Policy</a>.
+      <div class="summary-row">
+        <span>Material</span>
+        <span id="sum-material">—</span>
       </div>
-
-      <div class="d-flex justify-content-between mt-4 sticky-bottom bg-white py-3" style="z-index: 1020; border-top: 1px solid #f0f0f0;">
-        <button type="button" class="btn btn-outline-secondary px-4 fw-bold" onclick="window.location.href='wardrobe_calc_step-5.html'" style="border-radius: 8px;">
-          BACK
-        </button>
-        <button type="submit" class="btn px-5 fw-bold text-white" style="background: #2596be; border-radius: 8px;">
-          SUBMIT
-        </button>
+      <div class="summary-row">
+        <span>Accessories</span>
+        <span id="sum-accessories">—</span>
       </div>
+    </div>
 
-    </form>
+    <!-- CTA Banner -->
+    <div class="cta-banner">
+      <h2>Want an accurate quote?</h2>
+      <p>Book a <span class="free-badge">FREE</span> consultation with our designer to get<br>a detailed quote for your wardrobe.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdow82wqDy0WsF0cVjn0FDZg_DLJ7lHvjIBsf4mDQeBbu6B-A/viewform?usp=header" target="_blank" class="btn-quote">
+        GET DETAILED QUOTE
+      </a>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="trust-section">
+      <h3>Why choose us</h3>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8b124c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+              <path d="M8 14h.01M12 14h.01M16 14h.01"/>
+            </svg>
+          </div>
+          <p>45 day move-in<br>guarantee*</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8b124c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <p>Flat 10-year<br>warranty**</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8b124c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </div>
+          <p>146 quality<br>checks</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8b124c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+            </svg>
+          </div>
+          <p>Easy<br>EMI's</p>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+<script>
+  // ── Pricing config ──
+  const PRICE_TABLE = {
+    length: { "4ft": 0, "5ft": 5000, "6ft": 10000, "8ft": 18000, "10ft": 28000, "12ft": 40000 },
+    type:   { "Sliding": 0, "Hinged": 8000, "Walk-in": 25000 },
+    finish: { "Laminate": 0, "Veneer": 12000, "Acrylic": 18000, "PU Polish": 22000 },
+    material: { "Pre-lam Board": 0, "MDF": 8000, "Plywood": 15000 },
+    accessories: { "None": 0, "Basic": 3000, "Standard": 6000, "Premium": 12000 }
+  };
+  const BASE_WARDROBE = 22000;
+  const MARGIN = 0.35; // ±35% range
+
+  function fmt(n) {
+    if (n >= 100000) return "₹" + (n/100000).toFixed(1).replace(/\.0$/,'') + "L";
+    if (n >= 1000)   return "₹" + Math.round(n/1000) + "K";
+    return "₹" + n;
+  }
+
+  function getParam(name) {
+    return new URLSearchParams(window.location.search).get(name) || sessionStorage.getItem(name) || "";
+  }
+
+  function calcPrice() {
+    const length      = getParam("wardrobe_length")  || "6ft";
+    const type        = getParam("wardrobe_type")    || "Sliding";
+    const finish      = getParam("finish")           || "Laminate";
+    const material    = getParam("material")         || "Pre-lam Board";
+    const accessories = getParam("accessories")      || "None";
+
+    // Fill summary
+    document.getElementById("sum-length").textContent      = length;
+    document.getElementById("sum-type").textContent        = type;
+    document.getElementById("sum-finish").textContent      = finish;
+    document.getElementById("sum-material").textContent    = material;
+    document.getElementById("sum-accessories").textContent = accessories;
+
+    let total = BASE_WARDROBE
+      + (PRICE_TABLE.length[length]      || 0)
+      + (PRICE_TABLE.type[type]          || 0)
+      + (PRICE_TABLE.finish[finish]      || 0)
+      + (PRICE_TABLE.material[material]  || 0)
+      + (PRICE_TABLE.accessories[accessories] || 0);
+
+    const lo = Math.round(total * (1 - MARGIN) / 1000) * 1000;
+    const hi = Math.round(total * (1 + MARGIN) / 1000) * 1000;
+
+    document.getElementById("priceDisplay").textContent = fmt(lo) + " – " + fmt(hi);
+  }
+
+  function toggleSummary() {
+    const panel = document.getElementById("summaryPanel");
+    panel.classList.toggle("open");
+    document.querySelector(".estimate-summary-link").textContent =
+      panel.classList.contains("open") ? "Hide summary ↑" : "View detailed summary ↓";
+  }
+
+  calcPrice();
+</script>
 
 </body>
 </html>

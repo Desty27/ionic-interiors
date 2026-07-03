@@ -140,6 +140,127 @@
         .testimonial-slide.active {
             display: block;
         }
+    /* ====== MOBILE RESPONSIVE (max 767px) ====== */
+@media (max-width: 767px) {
+  html, body { overflow-x: hidden; max-width: 100%; }
+  
+  /* section spacing */
+  .py-section-padding-v { padding-top: 60px !important; padding-bottom: 60px !important; }
+  .px-section-padding-h { padding-left: 16px !important; padding-right: 16px !important; }
+  
+  /* typography scaling */
+  .text-display-lg, .font-display-lg { font-size: 32px !important; line-height: 1.15 !important; }
+  .text-headline-lg, .font-headline-lg { font-size: 26px !important; line-height: 1.25 !important; }
+  .text-headline-md, .font-headline-md { font-size: 20px !important; line-height: 1.3 !important; }
+  .text-body-lg, .font-body-lg { font-size: 15px !important; }
+  
+  /* multi-column grids to single column */
+  .md\:grid-cols-2, .lg\:grid-cols-2 { grid-template-columns: 1fr !important; }
+  .md\:grid-cols-3, .lg\:grid-cols-3 { grid-template-columns: 1fr !important; }
+  .md\:grid-cols-4, .lg\:grid-cols-4 { grid-template-columns: 1fr !important; }
+  .lg\:grid-cols-5 { grid-template-columns: 1fr !important; }
+  .lg\:grid-cols-7 { grid-template-columns: 1fr !important; }
+  .lg\:grid-cols-12 { grid-template-columns: 1fr !important; }
+  .sm\:grid-cols-2 { grid-template-columns: 1fr !important; }
+  
+  /* keep nav grid at 3 columns */
+  nav .grid-cols-3 { display: flex !important; align-items: center; gap: 12px; }
+  nav .grid-cols-3 > div:first-child { flex-shrink: 0; }
+  nav .grid-cols-3 > div:nth-child(2) { display: none !important; }
+  nav .grid-cols-3 > div:last-child { flex: 1; display: flex !important; justify-content: center; align-items: center; }
+  nav .grid-cols-3 > button.md\:hidden { flex-shrink: 0; margin-right: 4px !important; }
+  
+  /* reduce gap between sections */
+  .gap-stack-lg { gap: 24px !important; }
+  .gap-stack-md { gap: 16px !important; }
+  .gap-bento-gap { gap: 12px !important; }
+  .gap-gutter { gap: 16px !important; }
+  
+  /* mobile menu overlay */
+  .mobile-nav-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: #231F20; z-index: 40; padding-top: 88px;
+    display: none; flex-direction: column; align-items: center;
+  }
+  .mobile-nav-overlay.open { display: flex; }
+  .mobile-nav-overlay a {
+    color: #fff; width: 100%; text-align: center;
+    padding: 16px 24px; min-height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Manrope', sans-serif; font-size: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .mobile-nav-overlay a.active-link { color: #C4E139; font-weight: 700; }
+  .mobile-nav-overlay .quote-btn {
+    margin-top: 20px; background: #C4E139; color: #000;
+    padding: 14px 32px; border-radius: 8px; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+    border: none; width: auto; min-width: 200px;
+  }
+  
+  /* gallery - 2 columns on mobile */
+  .columns-1 { column-count: 2 !important; column-gap: 8px !important; }
+  .columns-1 > * { break-inside: avoid; margin-bottom: 8px !important; }
+  .masonry-item.h-\[500px\] { height: auto !important; }
+  .min-h-\[800px\] { min-height: 300px !important; }
+  .md\:min-h-\[1200px\] { min-height: auto !important; }
+  
+  /* hero */
+  header.h-screen { min-height: 500px !important; height: 100vh !important; }
+  .glass-card.p-8 { padding: 12px !important; }
+  .glass-card .border-r { border-right: none !important; }
+  header .space-x-3 { flex-direction: column; text-align: center; }
+  header .flex.items-center.space-x-3 { gap: 6px; }
+  
+  /* trust bar - 2 columns */
+  .glass-card .grid-cols-2.md\:grid-cols-4 { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+  
+  /* estimate cards */
+  .p-10 { padding: 20px !important; }
+  .p-12 { padding: 24px !important; }
+  
+  /* service items */
+  .lg\:col-span-5, .lg\:col-span-7 { grid-column: 1 !important; }
+  .lg\:col-span-5 .space-x-6 > :not([hidden]) ~ :not([hidden]) { margin-left: 10px !important; }
+  
+  /* why choose us */
+  .grid.grid-rows-2 { grid-template-rows: auto !important; }
+  .md\:row-span-2 { grid-row: auto !important; }
+  .md\:col-span-2 { grid-column: 1 !important; }
+  .md\:col-span-3 { grid-column: 1 !important; }
+  
+  /* testimonials */
+  .text-\[120px\] { font-size: 60px !important; margin-bottom: -30px !important; }
+  .h-\[400px\] { height: auto !important; min-height: 300px !important; }
+  
+  /* footer */
+  .min-w-\[300px\] { min-width: auto !important; width: 100% !important; }
+  .flex-col.md\:flex-row { gap: 12px !important; }
+  footer .grid-cols-1.sm\:grid-cols-2.md\:grid-cols-4 { grid-template-columns: 1fr 1fr !important; gap: 20px !important; }
+  
+  /* fix for h-screen marquee */
+  .animate-marquee { animation-duration: 20s !important; }
+  
+  /* images */
+  img { max-width: 100%; height: auto; }
+  .h-\[300px\], .h-\[400px\], .h-\[500px\], .h-\[600px\], .h-\[800px\] { height: auto !important; min-height: 200px !important; }
+  img.h-\[300px\], img.h-\[400px\], img.h-\[500px\] { height: 200px !important; }
+  
+  /* buttons */
+  a.px-12.py-5, button.px-12.py-5, a.px-10.py-4, button.px-10.py-4 { padding-left: 20px !important; padding-right: 20px !important; padding-top: 12px !important; padding-bottom: 12px !important; }
+  
+  /* order fix for about section */
+  .lg\:order-1, .lg\:order-2 { order: 0 !important; }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .text-display-lg, .font-display-lg { font-size: 42px !important; }
+  .text-headline-lg, .font-headline-lg { font-size: 32px !important; }
+  .py-section-padding-v { padding-top: 80px !important; padding-bottom: 80px !important; }
+}
+@media (max-width: 400px) {
+  .columns-1 { column-count: 1 !important; }
+  .glass-card .grid-cols-2.md\:grid-cols-4 { grid-template-columns: 1fr !important; }
+}
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-primary selection:text-on-primary overflow-x-hidden">
@@ -160,11 +281,20 @@
 <a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="contact.html">Contact</a>
 </div>
 <div class="flex justify-end items-center">
-<button class="bg-[#C4E139] text-black px-6 py-2.5 rounded-lg font-label-bold hover:scale-105 active:opacity-80 transition-transform">Get a Quote</button>
-<button class="md:hidden text-white p-2 min-w-[44px] min-h-[44px] ml-4">
+<button class="bg-[#C4E139] text-black px-6 py-2.5 rounded-lg font-label-bold hover:scale-105 active:opacity-80 transition-transform" onclick="var e=document.getElementById('estimate');if(e)e.scrollIntoView({behavior:'smooth'});else window.location.href='index.html#estimate'">Get a Quote</button>
+</div>
+<button class="md:hidden text-white p-2 min-w-[44px] min-h-[44px]">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
+<div class="md:hidden mobile-nav-overlay" id="mobileMenu">
+  <a href="index.html" class="active-link">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="blog.html">Blog</a>
+  <a href="careers.html">Careers</a>
+  <a href="contact.html">Contact</a>
+  <button class="quote-btn" onclick="var e=document.getElementById('estimate');if(e)e.scrollIntoView({behavior:'smooth'});else window.location.href='index.html#estimate'">Get a Quote</button>
 </div>
 </nav>
 <!-- Hero Section -->
@@ -257,7 +387,7 @@
 </div>
 </section>
 <!-- Estimate Section -->
-<section class="py-section-padding-v px-section-padding-h" style="background-color: #231F20;">
+<section id="estimate" class="py-section-padding-v px-section-padding-h" style="background-color: #231F20;">
 <div class="max-w-7xl mx-auto text-center mb-16 transition-all duration-1000 opacity-100">
 <h2 class="font-display-lg text-headline-lg text-white mb-4">Get The Estimate For Your <span class="text-primary" style="color: rgb(196, 225, 57);">Full Home</span></h2>
 <p class="text-white/60 font-body-md text-body-md">See Your Custom Interior Design Estimates in Seconds.</p>
@@ -365,10 +495,10 @@
 </div>
 <div class="hidden lg:block lg:col-span-7 sticky top-32">
 <div class="relative rounded-2xl overflow-hidden shadow-xl h-[600px] bg-surface-container-highest group/image">
-<img alt="Residential Interiors" class="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-100" id="showcase-img-0" src="../assets/residential-int(home).webp"  style="transform: scale(1); opacity: 0;">
-<img alt="Commercial Interiors" class="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-0" id="showcase-img-1" src="../assets/commercial-interior(home).webp" style="transform: scale(1); opacity: 0;">
-<img alt="Modular Kitchens &amp; Wardrobes" class="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-0" id="showcase-img-2" src="../assets/kitchen.jpeg" style="transform: scale(1); opacity: 0;">
-<img alt="Custom Furniture &amp; Decor" class="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-0" id="showcase-img-3" src="../assets/custom-furniture(home).jpg" style="transform: scale(1); opacity: 1;">
+<img alt="Residential Interiors" class="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-100" id="showcase-img-0" src="assets\residential-int(home).webp"  style="transform: scale(1); opacity: 0;">
+<img alt="Commercial Interiors" class="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-0" id="showcase-img-1" src="assets\commercial-interior(home).webp" style="transform: scale(1); opacity: 0;">
+<img alt="Modular Kitchens &amp; Wardrobes" class="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-0" id="showcase-img-2" src="assets\kitchen.jpeg" style="transform: scale(1); opacity: 0;">
+<img alt="Custom Furniture &amp; Decor" class="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-0" id="showcase-img-3" src="assets\custom-furniture(home).jpg" style="transform: scale(1); opacity: 1;">
 <button class="absolute bottom-8 right-8 bg-[#C4E139] text-black px-8 py-4 rounded-xl font-label-bold text-label-bold shadow-2xl hover:scale-105 transition-transform flex items-center justify-center space-x-2 z-10" style="color: rgb(26, 26, 26);"><span class="">Explore Project</span><span class="material-symbols-outlined text-sm">arrow_outward</span></button>
 </div>
 </div>
@@ -641,6 +771,28 @@
 </div>
 </footer>
 <script>
+    // Mobile hamburger menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+  var menuBtn = document.querySelector('nav button.md\\:hidden');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function() {
+      mobileMenu.classList.toggle('open');
+      var icon = menuBtn.querySelector('.material-symbols-outlined');
+      if (mobileMenu.classList.contains('open')) {
+        icon.textContent = 'close';
+      } else {
+        icon.textContent = 'menu';
+      }
+    });
+    mobileMenu.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+        mobileMenu.classList.remove('open');
+        menuBtn.querySelector('.material-symbols-outlined').textContent = 'menu';
+      }
+    });
+  }
+});
     // --- Gallery Logic ---
     const galleryData = {
         all: [

@@ -207,13 +207,14 @@
   
   /* hero */
   header.h-screen { min-height: 500px !important; height: 100vh !important; }
-  .glass-card.p-8 { padding: 12px !important; }
+  .glass-card.p-8 { padding: 4px !important; }
   .glass-card .border-r { border-right: none !important; }
-  header .space-x-3 { flex-direction: column; text-align: center; }
-  header .flex.items-center.space-x-3 { gap: 6px; }
   
-  /* trust bar - 2 columns */
-  .glass-card .grid-cols-2.md\:grid-cols-4 { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+  /* trust bar - compact mobile */
+  .glass-card.grid-cols-2.md\:grid-cols-4 { grid-template-columns: 1fr 1fr !important; gap: 2px !important; }
+  .glass-card .flex.items-center.space-x-3 { gap: 4px !important; padding: 4px 3px !important; }
+  .glass-card .material-symbols-outlined.text-3xl { font-size: 15px !important; line-height: 1 !important; }
+  .glass-card .font-label-bold { font-size: 9px !important; line-height: 1.2 !important; letter-spacing: 0.05em !important; }
   
   /* estimate cards */
   .p-10 { padding: 20px !important; }
@@ -259,7 +260,6 @@
 }
 @media (max-width: 400px) {
   .columns-1 { column-count: 1 !important; }
-  .glass-card .grid-cols-2.md\:grid-cols-4 { grid-template-columns: 1fr !important; }
 }
     </style>
 </head>

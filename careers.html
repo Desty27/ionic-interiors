@@ -1,0 +1,214 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Careers | Ionic Interiors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#e7e7e7",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "secondary": "#5f5e5e",
+                    "inverse-primary": "#88dd00",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "background": "#fcf9f8",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#e5e2e1",
+                    "on-primary-fixed": "#0f2000",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#eae7e7",
+                    "surface-container": "#f0eded",
+                    "primary": "#3f6a00",
+                    "surface-tint": "#3f6a00",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dcd9d9",
+                    "on-secondary-fixed-variant": "#474646",
+                    "tertiary": "#5d5f5f",
+                    "tertiary-fixed": "#e2e2e2",
+                    "surface-bright": "#fcf9f8",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-secondary-container": "#656464",
+                    "on-primary-container": "#457300",
+                    "on-background": "#1b1c1c",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f6f3f2",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#a4ff2d",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e4e2e1",
+                    "on-tertiary-container": "#666768",
+                    "outline-variant": "#c0caaf",
+                    "outline": "#717a62",
+                    "on-surface-variant": "#414a35",
+                    "primary-fixed-dim": "#88dd00",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e4e2e1",
+                    "surface": "#fcf9f8",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "inverse-surface": "#303030",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-surface": "#1b1c1c",
+                    "primary-fixed": "#a0fb27",
+                    "on-primary-fixed-variant": "#2e4f00",
+                    "neon-green": "#a4ff2d",
+                        "deep-charcoal": "#121212"
+            },
+            "spacing": {
+                    "section-padding-v": "120px",
+                    "stack-lg": "48px",
+                    "stack-md": "24px",
+                    "bento-gap": "16px",
+                    "section-padding-h": "5%",
+                    "stack-sm": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "label-bold": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-hover:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased">
+<!-- Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#231F20] shadow-sm">
+<div class="grid grid-cols-3 items-center px-section-padding-h py-4 max-w-full mx-auto">
+<div class="flex justify-start">
+<a class="font-display-lg text-headline-md tracking-tighter text-white" href="careers.html">
+<img alt="Ionic Interiors Logo" class="h-16 object-contain mix-blend-lighten" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOFfEaCvIDBgZacQpBYtgnVj3h6JcmSNKwfeu8ZKN-q0LHnxGjdzVylIg2Jg_rRCG37jTQP71jlG1xcr04uGOsI_d2lunA8R4rR5eSNeX83f6f_Hbwa3bLdTTq1yaL7XR9bSmmrT2STemWWfK9zKeEAYe5XmR1nQ5aofuhy8oqp14Jl3mATYw1Pgr23HFfESHJXn7iFzvVc3crQG-MPF_GxIq1dPu79fr5r5eILG7kvv8EP9lS9a90_nNvK-lMOMjfM6mEYAva6T5-">
+</a>
+</div>
+<div class="hidden md:flex items-center justify-center gap-8">
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="index.html">Home</a>
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="about.html">About</a>
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="services.html">Services</a>
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="blog.html">Blog</a>
+<a class="text-[#c4e139] font-bold border-b-2 border-[#c4e139] pb-1" href="careers.html">Careers</a>
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="contact.html">Contact</a>
+</div>
+<div class="flex justify-end items-center">
+<button class="bg-[#C4E139] text-black px-6 py-2.5 rounded-lg font-label-bold hover:scale-105 active:opacity-80 transition-transform">Get a Quote</button>
+<button class="md:hidden text-white p-2 min-w-[44px] min-h-[44px] ml-4">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="pt-[180px] pb-section-padding-v px-section-padding-h min-h-[819px] flex flex-col justify-center items-center text-center relative" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBvLW7CQWY2fdXB55D6RcjT0RkR7THqaRRBK27GXViauYY8yg2LcxEnYXdYn3K5JQ2dhm_qHOwn73C4VlEa4mzSBXIYWkQCj7FSo1WTeXz_k-QEEHQ2jnYR5DmmlmrZwL0DsoLzFvFQe1pOdgw-Kva-apRJP42vRM3g2-YfwPV9U_oUR-Xw9-f8oXmuWJkiZDrmM5QeDNXSZoGV8nhylDGWcB_du5mh2EuwYFlVlJVZbA8J_ycPVCA0x3wB82ng7gB3FnzSMpgZGBhV&quot;); background-size: cover; background-position: center center;"><div class="absolute inset-0 bg-black/60 z-0"></div><div class="relative z-10 flex flex-col items-center text-center"><h1 class="font-headline-lg text-headline-lg text-white max-w-4xl mb-6 md:text-display-lg">Build Your Future With Us.</h1><p class="font-body-lg text-body-lg text-zinc-400 max-w-2xl mb-12">At Ionic Interiors &amp; Construction, we are always looking for talented, passionate, and driven professionals to join our growing team. Shape the skylines and interiors of tomorrow with us.</p><div class="flex flex-col md:flex-row gap-6"><a class="bg-[#C4E139] text-black px-8 py-4 rounded-lg font-label-bold transition-all hover:scale-105" href="#openings">View Open Positions</a><a class="border-2 border-white text-white px-8 py-4 rounded-lg font-label-bold transition-all hover:bg-white/10 hover:scale-105" href="https://docs.google.com/forms/d/e/1FAIpQLSdP2N9Kc-sv1G21xyYs_JhrWOqwiE2W2TPa6VpFvvTNEh69lg/viewform?usp=header" target="_blank" rel="noopener noreferrer">Apply Now</a></div></div></section>
+<!-- Why Join Us? -->
+<section class="bg-deep-charcoal py-section-padding-v px-section-padding-h">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-headline-md text-headline-md text-white mb-16 text-center">Why Join Ionic?</h2>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-stack-lg">
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 border border-white/10 group-hover:bg-neon-green transition-colors">
+<span class="material-symbols-outlined group-hover:text-black text-[#C4E139]" data-icon="architecture">architecture</span>
+</div>
+<h3 class="font-label-bold text-white mb-2 uppercase tracking-widest">Diverse Projects</h3>
+<p class="text-zinc-500 font-body-md text-sm">From luxury villas to high-tech offices.</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 border border-white/10 group-hover:bg-neon-green transition-colors">
+<span class="material-symbols-outlined group-hover:text-black text-[#C4E139]" data-icon="trending_up">trending_up</span>
+</div>
+<h3 class="font-label-bold text-white mb-2 uppercase tracking-widest">Professional Growth</h3>
+<p class="text-zinc-500 font-body-md text-sm">Mentorship from industry pioneers.</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 border border-white/10 group-hover:bg-neon-green transition-colors">
+<span class="material-symbols-outlined group-hover:text-black text-[#C4E139]" data-icon="groups">groups</span>
+</div>
+<h3 class="font-label-bold text-white mb-2 uppercase tracking-widest">Collaborative Culture</h3>
+<p class="text-zinc-500 font-body-md text-sm">A family where every voice matters.</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 border border-white/10 group-hover:bg-neon-green transition-colors">
+<span class="material-symbols-outlined group-hover:text-black text-[#C4E139]" data-icon="military_tech">military_tech</span>
+</div>
+<h3 class="font-label-bold text-white mb-2 uppercase tracking-widest">Performance Rewards</h3>
+<p class="text-zinc-500 font-body-md text-sm">Celebrating excellence in every detail.</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 border border-white/10 group-hover:bg-neon-green transition-colors">
+<span class="material-symbols-outlined group-hover:text-black text-[#C4E139]" data-icon="visibility">visibility</span>
+</div>
+<h3 class="font-label-bold text-white mb-2 uppercase tracking-widest">End-to-End Exposure</h3>
+<p class="text-zinc-500 font-body-md text-sm">See projects from blueprint to reality.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Life at Ionic -->
+<section class="bg-[#FAF0E6] py-section-padding-v px-section-padding-h"><div class="max-w-7xl mx-auto"><h2 class="font-headline-md text-headline-md text-[#1A1A1A] mb-12">Life at Ionic</h2><div class="grid grid-cols-1 md:grid-cols-12 grid-rows-2 gap-4 h-[800px]"><div class="md:col-span-7 md:row-span-2 relative overflow-hidden rounded-bento bento-hover"><img class="w-full h-full object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO_4pUF4lstddXv9l-psPqohsEPMqL8PBF0Hq6D9JAI7-wTBge-kZt8rt340l42XNpH3w_vld7p9fAxF2AXgv5yEobK9GwND9APIsQAFXD1qhUBBDgC6bIE5ghnIYAb-fwbI-IRB3OyxIlyY5X5TIR5_kWITyKhaxfxUKiea_clDLqtT0kKoKnpEmb0SPrCw75x_GpyWx_SXs4nOxlU85iLG6XfMM6_DV10_h44JSGtMPik11nnwmw1ceizupGI9ag898QpyFGlHsI"><div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/60 to-transparent"><p class="text-white font-label-bold">Collaborative Studio Space</p></div></div><div class="md:col-span-5 md:row-span-1 relative overflow-hidden rounded-bento bento-hover"><img class="w-full h-full object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ2rVf6W-nwfmJJfqT2g_ycvvR0qAlqILz6v7wxya3I2x8SZgnJpMfgtuFagNX1Zviu4WJ99EIca4fRC7-gk_YWlQu35bJpC5b525o5eZ8bNdEYDNN2NfawPFsdz9hAj7fScBNweP5Yo1vDkNa5ir1hwTKx5bwrnUVnLs5ghS9Lgy9qqTXLwE18_VHHh2ZSfjS4GCN5AA-xNijwUavWq26IM_LyOhG_nIr_9aSPbjG1pOP6Gww8GzLxjZ--BrVB_xgrArXi_ELo0hp"></div><div class="md:col-span-2 md:row-span-1 relative overflow-hidden rounded-bento bento-hover"><img class="w-full h-full object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs82ZNgr1YmZQIM-c7hn2wOyuqaTlfBCteQZCJPEhMCB5NiL5ex-OmTY6BHeXcmaI4DqAosurbNDT6fs9F7Kl_vMgMRsCgyeZWl-PIdgC2LT7PrrhJ2RTDah0PyfD2Qje3TQ6Mmwre5aadKuXsU_Q13dNga8wI2T0w2HdC-zJoHAyy4qbOPA1_t4bAkclVSz6088Q1x7qMyn1slZGZ0lAwbc6KXAf4U0oSWjf-ObNAW8xGfHDluRDokhBLfnRu1csgjdAqL8HpqPUs"></div><div class="md:col-span-3 md:row-span-1 relative overflow-hidden rounded-bento bento-hover"><img class="w-full h-full object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB97AP_bB_PFXEbUWvQNnqxjIh3motTbCiQuxsO0bHL1pJvxrnb2nzjMPufZhfwsw40QWV9Vt73vA_vzv1xxfwy6TQxmUP6skvrYjr40kKYhnMT0rgTSgJhKI3bMsbaI8RMDo26-gseF-rFYJtw55QQYBR2HAfcFGIh-ks4p2hCq4M1hlb6TAUvDctmcyhkTVWCXTC7TkAZlUN19lo-aJsZ3tkuDWJi5zq5YXccLXcl297i7rbvw4YlsYt4maMB9h3_feYREM_7k2Dl"></div></div></div></section>
+<!-- Current Openings -->
+<section class="bg-[#FAF0E6] py-section-padding-v px-section-padding-h border-t border-outline-variant/10" id="openings"><div class="max-w-7xl mx-auto"><div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16"><div><h2 class="font-headline-md text-headline-md text-[#1A1A1A] mb-4">Current Openings</h2><p class="text-[#1A1A1A] font-body-md">Find your next challenge within our elite teams.</p></div><div class="flex flex-col md:flex-row gap-4 w-full md:w-auto"><div class="relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400">search</span><input class="pl-10 pr-4 py-3 rounded-lg border-outline bg-surface-container-low w-full md:w-72 focus:ring-[#C4E139] focus:border-[#C4E139]" placeholder="Search positions..." type="text"></div><select class="py-3 px-4 rounded-lg border-outline bg-surface-container-low focus:ring-[#C4E139] focus:border-[#C4E139]"><option>All Departments</option><option>Design</option><option>Project Management</option><option>Operations</option><option>Finance</option></select></div></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><!-- Job Card 1 --><div class="bg-deep-charcoal p-8 rounded-bento flex flex-col group hover:-translate-y-2 transition-transform duration-300"><div class="flex justify-between items-start mb-6"><span class="bg-white/10 text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-tighter">Design</span><span class="material-symbols-outlined text-white/20 group-hover:text-[#C4E139] transition-colors">north_east</span></div><h3 class="font-headline-md text-2xl text-white mb-2">Senior Designer</h3><div class="flex flex-wrap gap-2 mb-6"><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">Bhubaneswar, Odisha</span><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">8+ Years Exp</span><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">Full-Time</span></div><ul class="text-zinc-400 text-sm space-y-2 mb-8 flex-grow"><li class="flex items-start gap-2"><span class="text-[#C4E139] text-xs mt-1">●</span> Lead residential luxury interior design concepts.</li><li class="flex items-start gap-2"><span class="text-[#C4E139] text-xs mt-1">●</span> Advanced proficiency in AutoCAD, SketchUp, and V-Ray.</li></ul><a class="block w-full bg-[#C4E139] text-black py-4 rounded-lg font-label-bold hover:scale-[1.02] transition-transform text-center" href="https://docs.google.com/forms/d/e/1FAIpQLSdP2N9Kc-sv1G21xyYs_JhrWOqwiE2W2TPa6VpFvvTNEh69lg/viewform?usp=header" target="_blank" rel="noopener noreferrer">Apply Now</a></div><!-- Job Card 2 --><div class="bg-deep-charcoal p-8 rounded-bento flex flex-col group hover:-translate-y-2 transition-transform duration-300"><div class="flex justify-between items-start mb-6"><span class="bg-white/10 text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-tighter">Design</span><span class="material-symbols-outlined text-white/20 group-hover:text-[#C4E139] transition-colors">north_east</span></div><h3 class="font-headline-md text-2xl text-white mb-2">Trainee Designer</h3><div class="flex flex-wrap gap-2 mb-6"><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">Bhubaneswar, Odisha</span><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">0-2 Years Exp</span><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">Full-Time</span></div><ul class="text-zinc-400 text-sm space-y-2 mb-8 flex-grow"><li class="flex items-start gap-2"><span class="text-[#C4E139] text-xs mt-1">●</span> Assist senior architects in 2D/3D visualization.</li><li class="flex items-start gap-2"><span class="text-[#C4E139] text-xs mt-1">●</span> Keen eye for textures and modern architectural trends.</li></ul><a class="block w-full bg-[#C4E139] text-black py-4 rounded-lg font-label-bold hover:scale-[1.02] transition-transform text-center" href="https://docs.google.com/forms/d/e/1FAIpQLSdP2N9Kc-sv1G21xyYs_JhrWOqwiE2W2TPa6VpFvvTNEh69lg/viewform?usp=header" target="_blank" rel="noopener noreferrer">Apply Now</a></div><!-- Job Card 3 --><div class="bg-deep-charcoal p-8 rounded-bento flex flex-col group hover:-translate-y-2 transition-transform duration-300"><div class="flex justify-between items-start mb-6"><span class="bg-white/10 text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-tighter">Management</span><span class="material-symbols-outlined text-white/20 group-hover:text-[#C4E139] transition-colors">north_east</span></div><h3 class="font-headline-md text-2xl text-white mb-2">Project Manager</h3><div class="flex flex-wrap gap-2 mb-6"><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">Bhubaneswar, Odisha</span><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">5+ Years Exp</span><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">Full-Time</span></div><ul class="text-zinc-400 text-sm space-y-2 mb-8 flex-grow"><li class="flex items-start gap-2"><span class="text-[#C4E139] text-xs mt-1">●</span> Oversee end-to-end execution of architectural builds.</li><li class="flex items-start gap-2"><span class="text-[#C4E139] text-xs mt-1">●</span> Vendor management and site timeline adherence.</li></ul><a class="block w-full bg-[#C4E139] text-black py-4 rounded-lg font-label-bold hover:scale-[1.02] transition-transform text-center" href="https://docs.google.com/forms/d/e/1FAIpQLSdP2N9Kc-sv1G21xyYs_JhrWOqwiE2W2TPa6VpFvvTNEh69lg/viewform?usp=header" target="_blank" rel="noopener noreferrer">Apply Now</a></div><!-- Job Card 4 --><div class="bg-deep-charcoal p-8 rounded-bento flex flex-col group hover:-translate-y-2 transition-transform duration-300"><div class="flex justify-between items-start mb-6"><span class="bg-white/10 text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-tighter">Site</span><span class="material-symbols-outlined text-white/20 group-hover:text-[#C4E139] transition-colors">north_east</span></div><h3 class="font-headline-md text-2xl text-white mb-2">Site Supervisor</h3><div class="flex flex-wrap gap-2 mb-6"><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">Odisha Regions</span><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">3+ Years Exp</span><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">Contract</span></div><ul class="text-zinc-400 text-sm space-y-2 mb-8 flex-grow"><li class="flex items-start gap-2"><span class="text-[#C4E139] text-xs mt-1">●</span> Monitoring daily progress and quality checks.</li><li class="flex items-start gap-2"><span class="text-[#C4E139] text-xs mt-1">●</span> Skilled in coordinating specialized labor teams.</li></ul><a class="block w-full bg-[#C4E139] text-black py-4 rounded-lg font-label-bold hover:scale-[1.02] transition-transform text-center" href="https://docs.google.com/forms/d/e/1FAIpQLSdP2N9Kc-sv1G21xyYs_JhrWOqwiE2W2TPa6VpFvvTNEh69lg/viewform?usp=header" target="_blank" rel="noopener noreferrer">Apply Now</a></div><!-- Job Card 5 --><div class="bg-deep-charcoal p-8 rounded-bento flex flex-col group hover:-translate-y-2 transition-transform duration-300"><div class="flex justify-between items-start mb-6"><span class="bg-white/10 text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-tighter">Finance</span><span class="material-symbols-outlined text-white/20 group-hover:text-[#C4E139] transition-colors">north_east</span></div><h3 class="font-headline-md text-2xl text-white mb-2">Accountant</h3><div class="flex flex-wrap gap-2 mb-6"><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">Bhubaneswar, Odisha</span><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">2-5 Years Exp</span><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">Full-Time</span></div><ul class="text-zinc-400 text-sm space-y-2 mb-8 flex-grow"><li class="flex items-start gap-2"><span class="text-[#C4E139] text-xs mt-1">●</span> Managing project budgets and client invoicing.</li><li class="flex items-start gap-2"><span class="text-[#C4E139] text-xs mt-1">●</span> Proficient in Tally and taxation compliance.</li></ul><a class="block w-full bg-[#C4E139] text-black py-4 rounded-lg font-label-bold hover:scale-[1.02] transition-transform text-center" href="https://docs.google.com/forms/d/e/1FAIpQLSdP2N9Kc-sv1G21xyYs_JhrWOqwiE2W2TPa6VpFvvTNEh69lg/viewform?usp=header" target="_blank" rel="noopener noreferrer">Apply Now</a></div><!-- Job Card 6 --><div class="bg-deep-charcoal p-8 rounded-bento flex flex-col group hover:-translate-y-2 transition-transform duration-300"><div class="flex justify-between items-start mb-6"><span class="bg-white/10 text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-tighter">Growth</span><span class="material-symbols-outlined text-white/20 group-hover:text-[#C4E139] transition-colors">north_east</span></div><h3 class="font-headline-md text-2xl text-white mb-2">BDM</h3><div class="flex flex-wrap gap-2 mb-6"><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">Bhubaneswar, Odisha</span><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">4+ Years Exp</span><span class="text-[12px] text-zinc-400 border border-zinc-700 px-2 py-0.5 rounded">Full-Time</span></div><ul class="text-zinc-400 text-sm space-y-2 mb-8 flex-grow"><li class="flex items-start gap-2"><span class="text-[#C4E139] text-xs mt-1">●</span> Client acquisition in the luxury real estate sector.</li><li class="flex items-start gap-2"><span class="text-[#C4E139] text-xs mt-1">●</span> Developing strategic partnerships with builders.</li></ul><a class="block w-full bg-[#C4E139] text-black py-4 rounded-lg font-label-bold hover:scale-[1.02] transition-transform text-center" href="https://docs.google.com/forms/d/e/1FAIpQLSdP2N9Kc-sv1G21xyYs_JhrWOqwiE2W2TPa6VpFvvTNEh69lg/viewform?usp=header" target="_blank" rel="noopener noreferrer">Apply Now</a></div></div></div></section>
+<!-- Application CTA -->
+<section class="bg-deep-charcoal py-section-padding-v px-section-padding-h text-center">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline-md text-headline-md text-white mb-6">Not seeing the right role?</h2>
+<p class="text-zinc-400 mb-10 font-body-lg">Submit your details to our general talent pool and we'll reach out when an opportunity that matches your unique skills arises.</p>
+<a class="inline-block bg-[#C4E139] text-black px-12 py-5 rounded-lg font-label-bold hover:scale-105 transition-all shadow-lg shadow-[#C4E139]/20" href="https://docs.google.com/forms/d/e/1FAIpQLSdP2N9Kc-sv1G21xyYs_JhrWOqwiE2W2TPa6VpFvvTNEh69lg/viewform?usp=header" target="_blank" rel="noopener noreferrer">Fill Application Form</a>
+</div>
+</section>
+<!-- FAQ Accordion -->
+<section class="bg-[#FAF0E6] py-section-padding-v px-section-padding-h"><div class="max-w-4xl mx-auto"><h2 class="font-headline-md text-headline-md text-[#1A1A1A] mb-12 text-center">Your Questions, Answered</h2><div class="space-y-4"><div class="border-b border-outline-variant/30 py-6 group cursor-pointer" onclick="this.classList.toggle('active')"><div class="flex justify-between items-center"><h4 class="font-label-bold text-lg text-[#1A1A1A]">What does the interview process look like?</h4><span class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-180">expand_more</span></div><div class="max-h-0 overflow-hidden transition-all duration-300 group-[.active]:max-h-[200px]"><p class="pt-4 text-[#1A1A1A] font-body-md">Typically, it involves a portfolio review (for design roles), a technical round with our leads, and a final culture-fit conversation with the founders.</p></div></div><div class="border-b border-outline-variant/30 py-6 group cursor-pointer" onclick="this.classList.toggle('active')"><div class="flex justify-between items-center"><h4 class="font-label-bold text-lg text-[#1A1A1A]">Is relocation assistance provided?</h4><span class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-180">expand_more</span></div><div class="max-h-0 overflow-hidden transition-all duration-300 group-[.active]:max-h-[200px]"><p class="pt-4 text-[#1A1A1A] font-body-md">Relocation support is evaluated on a case-by-case basis for senior positions moving to our Bhubaneswar headquarters.</p></div></div><div class="border-b border-outline-variant/30 py-6 group cursor-pointer" onclick="this.classList.toggle('active')"><div class="flex justify-between items-center"><h4 class="font-label-bold text-lg text-[#1A1A1A]">How often are performance reviews conducted?</h4><span class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-180">expand_more</span></div><div class="max-h-0 overflow-hidden transition-all duration-300 group-[.active]:max-h-[200px]"><p class="pt-4 text-[#1A1A1A] font-body-md">We conduct semi-annual reviews focused on growth, skill development, and aligning your personal goals with company expansion.</p></div></div></div></div></section>
+<!-- Bottom CTA -->
+<section class="bg-black py-section-padding-v px-section-padding-h text-center relative overflow-hidden" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgb(35, 31, 32) 100%), url('../assets/dark-bg\(about\).png'); background-size: cover; background-position: center center;">
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-white mb-8">Ready to Build Your Future With Us?</h2>
+<a class="bg-[#C4E139] text-black px-12 py-5 rounded-lg font-label-bold hover:scale-105 transition-all text-lg shadow-lg shadow-[#C4E139]/10" href="https://docs.google.com/forms/d/e/1FAIpQLSdP2N9Kc-sv1G21xyYs_JhrWOqwiE2W2TPa6VpFvvTNEh69lg/viewform?usp=header" target="_blank" rel="noopener noreferrer">Apply Now</a>
+</div>
+</section>
+<!-- Footer -->
+<footer class="py-section-padding-v px-section-padding-h border-t border-outline-variant/20" style="background-color: #231F20;"><div class="max-w-7xl mx-auto flex flex-col gap-12"><div class="grid grid-cols-1 md:grid-cols-4 gap-12"><div class="flex flex-col gap-6"><h4 class="text-[#C4E139] font-label-bold uppercase tracking-widest">QUICK LINKS</h4><ul class="flex flex-col gap-4"><li class="flex items-center gap-2 text-white font-body-md"><span class="material-symbols-outlined text-[#C4E139] text-sm">chevron_right</span><a class="hover:text-[#C4E139] transition-colors" href="index.html">Home</a></li><li class="flex items-center gap-2 text-white font-body-md"><span class="material-symbols-outlined text-[#C4E139] text-sm">chevron_right</span><a class="hover:text-[#C4E139] transition-colors" href="about.html">About</a></li><li class="flex items-center gap-2 text-white font-body-md"><span class="material-symbols-outlined text-[#C4E139] text-sm">chevron_right</span><a class="hover:text-[#C4E139] transition-colors" href="services.html">Services</a></li><li class="flex items-center gap-2 text-white font-body-md"><span class="material-symbols-outlined text-[#C4E139] text-sm">chevron_right</span><a class="hover:text-[#C4E139] transition-colors" href="careers.html">Careers</a></li><li class="flex items-center gap-2 text-white font-body-md"><span class="material-symbols-outlined text-[#C4E139] text-sm">chevron_right</span><a class="hover:text-[#C4E139] transition-colors" href="contact.html">Contact</a></li></ul></div><div class="flex flex-col gap-6"><h4 class="text-[#C4E139] font-label-bold uppercase tracking-widest">SERVICES</h4><ul class="flex flex-col gap-4"><li class="flex items-center gap-2 text-white font-body-md"><span class="material-symbols-outlined text-[#C4E139] text-sm">chevron_right</span><a class="hover:text-[#C4E139] transition-colors" href="services.html#residential-interiors">Residential Interiors</a></li><li class="flex items-center gap-2 text-white font-body-md"><span class="material-symbols-outlined text-[#C4E139] text-sm">chevron_right</span><a class="hover:text-[#C4E139] transition-colors" href="services.html#commercial-interiors">Commercial Interiors</a></li><li class="flex items-center gap-2 text-white font-body-md"><span class="material-symbols-outlined text-[#C4E139] text-sm">chevron_right</span><a class="hover:text-[#C4E139] transition-colors" href="services.html#modular-kitchens-wardrobes">Modular Furniture</a></li><li class="flex items-center gap-2 text-white font-body-md"><span class="material-symbols-outlined text-[#C4E139] text-sm">chevron_right</span><a class="hover:text-[#C4E139] transition-colors" href="services.html#bespoke-furniture-soft-furnishings">Custom Furniture &amp; Decor</a></li><li class="flex items-center gap-2 text-white font-body-md"><span class="material-symbols-outlined text-[#C4E139] text-sm">chevron_right</span><a class="hover:text-[#C4E139] transition-colors" href="services.html#construction">Construction</a></li><li class="flex items-center gap-2 text-white font-body-md"><span class="material-symbols-outlined text-[#C4E139] text-sm">chevron_right</span><a class="hover:text-[#C4E139] transition-colors" href="services.html#planning-consultation">Planning &amp; Consultation</a></li></ul></div><div class="flex flex-col gap-6"><h4 class="text-[#C4E139] font-label-bold uppercase tracking-widest">POPULAR</h4><ul class="flex flex-col gap-4"><li class="flex items-center gap-2 text-white font-body-md"><a class="hover:text-[#C4E139] transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined text-[#C4E139] text-lg" style="color: rgb(196, 225, 57);">photo_camera</span>Instagram</a></li><li class="flex items-center gap-2 text-white font-body-md"><a class="hover:text-[#C4E139] transition-colors flex items-center gap-2" href="#"><img width="24" height="24" src="https://img.icons8.com/material-rounded/24/c4e139/facebook-circled--v1.png" alt="facebook-circled--v1"/>Facebook</a></li><li class="flex items-center gap-2 text-white font-body-md"><a class="hover:text-[#C4E139] transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined text-[#C4E139] text-lg" style="color: rgb(196, 225, 57);">play_circle</span>YouTube</a></li><li class="flex items-center gap-2 text-white font-body-md"><a class="hover:text-[#C4E139] transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined text-[#C4E139] text-lg" style="color: rgb(196, 225, 57);">work</span>LinkedIn</a></li></ul></div><div class="flex flex-col gap-6"><h4 class="text-[#C4E139] font-label-bold uppercase tracking-widest">CONTACT INFO</h4><ul class="flex flex-col gap-4"><li class="flex items-center gap-3 text-white font-body-md"><span class="material-symbols-outlined text-[#C4E139]">call</span>9556521197</li><li class="flex items-center gap-3 text-white font-body-md"><span class="material-symbols-outlined text-[#C4E139]">mail</span>info@ionicinteriors.in</li><li class="flex items-start gap-3 text-white font-body-md"><span class="material-symbols-outlined text-[#C4E139]">location_on</span><span class="">Raghunathpur, patia,<br>Bhubaneswar, India 751024</span></li></ul></div></div><div class="pt-8 border-t border-white/10 text-center"><p class="text-zinc-500 text-sm">© 2024 Ionic Interiors &amp; Construction. All rights reserved.</p></div></div></footer>
+
+
+
+
+
+    <!-- Floating WhatsApp -->
+    <a class="fixed bottom-8 right-8 w-16 h-16 bg-[#C4E139] rounded-full shadow-2xl flex items-center justify-center text-black hover:scale-110 active:scale-95 transition-all z-[100] group" href="https://wa.me/919556521197" target="_blank">
+    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+    </svg>
+    </a>
+</body></html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Services | LUMINA ARCH (Ionic Interiors)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f6f3f2",
+                        "outline-variant": "#c0caaf",
+                        "primary-fixed": "#C4E139", /* Brand Lime Green */
+                        "on-primary": "#000000",
+                        "secondary-container": "#e5e2e1",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#e7e7e7",
+                        "surface-bright": "#fcf9f8",
+                        "inverse-primary": "#88dd00",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container": "#f0eded",
+                        "on-surface-variant": "#414a35",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed-dim": "#88dd00",
+                        "on-tertiary-container": "#666768",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface": "#fcf9f8",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dcd9d9",
+                        "on-surface": "#1b1c1c",
+                        "on-primary-fixed": "#0f2000",
+                        "on-background": "#1b1c1c",
+                        "surface-tint": "#3f6a00",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#656464",
+                        "secondary": "#5f5e5e",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-primary-container": "#457300",
+                        "inverse-on-surface": "#f3f0ef",
+                        "background": "#fcf9f8",
+                        "surface-variant": "#e4e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-primary-fixed-variant": "#2e4f00",
+                        "primary-container": "#C4E139",
+                        "outline": "#717a62",
+                        "surface-container-highest": "#e4e2e1",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container-high": "#eae7e7",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "tertiary": "#5d5f5f",
+                        "inverse-surface": "#303030",
+                        "primary": "#3f6a00",
+                        "warm-linen": "#FAF0E6",
+                        "deep-charcoal": "#1A1A1A"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-md": "24px",
+                        "section-padding-v": "120px",
+                        "section-padding-h": "5%",
+                        "gutter": "24px",
+                        "stack-lg": "48px",
+                        "bento-gap": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-bold": ["Manrope"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Manrope"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 20px rgba(196, 225, 57, 0.4);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md text-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#231F20] shadow-sm">
+<div class="grid grid-cols-3 items-center px-section-padding-h py-4 max-w-full mx-auto">
+<div class="flex justify-start">
+<a class="font-display-lg text-headline-md tracking-tighter text-white" href="services.html">
+<img alt="Ionic Interiors Logo" class="h-16 object-contain mix-blend-lighten" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA37zP9aO8JKH9Qm69T3tz0b3In-AjYwwl_oVqv02YP-NUyfjQkKGpDP4_TNaRGsBOR6iTeJfW2dJKofeIZQMBgFbICFMioa0dDpobinUhZTfQEc-fot62NiNM4FQZDuENsvAzOjmShfk7q94lmS-qkxck5axcVtfPw0robg3oiNVfYoD5z2FQLoyVd79CbftU4px8jSsVQ6LVwsKLN5M9IaClh4BK_uVO_P-0JraA25lmRxGE70BBUR-tVVUSHNDeK7U5VL_HyHb6-">
+</a>
+</div>
+<div class="hidden md:flex items-center justify-center gap-8">
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="index.html">Home</a>
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="about.html">About</a>
+<a class="text-[#c4e139] font-bold border-b-2 border-[#c4e139] pb-1" href="services.html">Services</a>
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="blog.html">Blog</a>
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="careers.html">Careers</a>
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="contact.html">Contact</a>
+</div>
+<div class="flex justify-end items-center">
+<button class="bg-[#C4E139] text-black px-6 py-2.5 rounded-lg font-label-bold hover:scale-105 active:opacity-80 transition-transform">Get a Quote</button>
+<button class="md:hidden text-white p-2 min-w-[44px] min-h-[44px] ml-4">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center text-center px-section-padding-h overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="High-end architectural interior" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMceRlsSk_ADs1AsEj90CsyvibMj2a5-_qhYVNRR6zPuvGjCceBcFNDikfdsbOcI_qoomSpKs0Pn4n1r9bU49nrzwOhV15AP2znEivqLFmK-R6_HC8n1_r2BvLE3kf-p8rbtsuvbm1-xuBXIjliiOzfs6meVX0WFKFPec5HsiPZKbdNG_lk8xVsZkEEnpKW--qIM00UCAmhSCq_vMA8LP24a1eqifh5rW6aYV_mWTxQyvshMuPXsAsEfhIzeYruHRJfVpc4soD-yCz">
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-b from-black via-black/60 to-black"></div>
+</div>
+<!-- Content Container -->
+<div class="relative z-10 max-w-4xl animate-fade-in-up pt-[180px] pb-section-padding-v">
+<h1 class="font-display-lg text-display-lg text-surface mb-stack-md leading-tight">
+                    Exceptional services for extraordinary spaces.
+                </h1>
+<p class="font-body-lg text-body-lg text-secondary-fixed-dim max-w-2xl mx-auto opacity-80">
+                    From architectural foundations to the final decorative touches, we provide end-to-end interior solutions.
+                </p>
+</div>
+</section>
+<!-- Main Services (Zig-Zag) -->
+<section class="bg-warm-linen py-section-padding-v px-section-padding-h overflow-hidden">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-[120px]">
+<!-- Row 1 -->
+<div class="flex flex-col md:flex-row items-center gap-gutter transition-all duration-700 opacity-100 translate-y-0 scroll-mt-32" id="residential-interiors">
+<div class="w-full md:w-1/2 group overflow-hidden rounded-xl h-[500px]">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChc5t8rkjYGH6j2wsaEjAbaYOExqR2auz3mR5OKMaMypJibDe_A3RlWeggvZrPzHskFRP3hJw2jhHdGupJHXp9BaXp06WHZzDAtHoO-Usy-z80XfzKT82_j7gCuL2zhIsmCudgpKcCTs5iTJDzU9ebNHIUbYeWW7f__aDzi5btYwX5xIM92lTkyvRRVC39L0KpYuxplsrALsmqD2epZ9igY5Q-BhUcCjm8lqtwKFUr6s1XPJ_J8rzyZklp5xXDfvE5x3tgk297S_d6Ts0">
+</div>
+<div class="w-full md:w-1/2 flex flex-col justify-center px-4 md:px-12 transition-all duration-700 opacity-100 translate-y-0">
+<h2 class="font-headline-lg text-headline-lg mb-stack-md text-deep-charcoal transition-all duration-700 opacity-100 translate-y-0">Interior &amp; Residential Construction Solutions</h2>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Interior &amp; Residential Construction</span>
+</li>
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Facade &amp; Colour Consultant</span>
+</li>
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Space Planning &amp; Consultancy</span>
+</li>
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Turnkey Projects</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-gutter transition-all duration-700 opacity-100 translate-y-0 scroll-mt-32" id="bespoke-furniture-soft-furnishings">
+<div class="w-full md:w-1/2 group overflow-hidden rounded-xl h-[500px]">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnJEC9y0RBLo5zBOH1cnCsPxbMn5ofLp6DBP19pRj7HD9lN9V-NQjUkhHNg_cbj129NAdX0K9U8nXY-e9cVj8wIXytYavJgpsOOwG-sSMkZTqNGSBX_mn9Shu4K3TQ9pI-chLKgtvJPWMfHmCT0WYkF3iHdVlPlfFWdpGmHblh4wq_Z4kLfvoCeB10qHS39FWrm3NZm2Hz6xZtnQVZ-Vl5zzatSqZqfGF6DX7cfworQ3UKaU2dlwB-z3DiYv87mYisJ7Ud7MYc0x4blNU">
+</div>
+<div class="w-full md:w-1/2 flex flex-col justify-center px-4 md:px-12 transition-all duration-700 opacity-100 translate-y-0">
+<h2 class="font-headline-lg text-headline-lg mb-stack-md text-deep-charcoal transition-all duration-700 opacity-100 translate-y-0">Bespoke Furniture &amp; Soft Furnishings</h2>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Custom furniture solutions</span>
+</li>
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Window treatments &amp; solutions</span>
+</li>
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Premium blinds, curtains &amp; sofas</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex flex-col md:flex-row items-center gap-gutter transition-all duration-700 opacity-100 translate-y-0 scroll-mt-32" id="modular-kitchens-wardrobes">
+<div class="w-full md:w-1/2 group overflow-hidden rounded-xl h-[500px]">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkdjqyDa-FI5xnDhXIL7adtI37AlUo-WCCObdcnl_31Rnby0K6ywNpTfyVhsZWRiYZ5LHkV6ZsOv8srFa2Cs8a2EAhAlEf5bINA4okut5DFVRA0Vti2t0zAXWsjNe7rEMpV2DkOSxa9GdOHJQgFQ_OOEj3prApV0qQB03MItlsog10eZEXG-tz4RFk9TEtQOhLOZ_BKb6ZbQ44uFhpA845WXg0kH0ZtBiRzdF4K8-YOh3RsMQlNChnshO6NuUOemrn449eiyGMKN--NBw">
+</div>
+<div class="w-full md:w-1/2 flex flex-col justify-center px-4 md:px-12 transition-all duration-700 opacity-100 translate-y-0">
+<h2 class="font-headline-lg text-headline-lg mb-stack-md text-deep-charcoal transition-all duration-700 opacity-100 translate-y-0">Modular Kitchens &amp; Wardrobes</h2>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Smart space utilization</span>
+</li>
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Handle-less modern finishes</span>
+</li>
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Factory-made precision</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-gutter transition-all duration-700 opacity-100 translate-y-0 scroll-mt-32" id="premium-materials-lighting-flooring">
+<div class="w-full md:w-1/2 group overflow-hidden rounded-xl h-[500px]">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkEHGwyqpS2e6Mddy8cw6mAU9w3hzK2dNFtxOZ5pP11USEdeyRX1NScCECeezdW-YpoumkwNRn9hdswPXP2--qK0cM5nzwdQggFg4IzJKeFNer9ztpeV4NESCyA3-bHhHuB900hLuxhgmyHMdj6QTxVo84lfrJ9r8Xjtw1_fE_ONwfQiysw5VrerUm3K4ZAwtw8myzRvlXqICJidawgXWqL7EJGaRGL3EsY9fwuon2cd1L98k2_ORnuVcfSsKDvHYzTvHwCcMHwIs5mpE">
+</div>
+<div class="w-full md:w-1/2 flex flex-col justify-center px-4 md:px-12 transition-all duration-700 opacity-100 translate-y-0">
+<h2 class="font-headline-lg text-headline-lg mb-stack-md text-deep-charcoal transition-all duration-700 opacity-100 translate-y-0">Premium Materials, Lighting &amp; Flooring</h2>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Custom lighting solutions</span>
+</li>
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Premium flooring solutions</span>
+</li>
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">High-end glass &amp; premium hardware</span>
+</li>
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Custom plywood, laminates &amp; decorative items</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Row 5 (New: Construction) -->
+<div class="flex flex-col md:flex-row items-center gap-gutter transition-all duration-700 opacity-100 translate-y-0 scroll-mt-32" id="construction">
+<div class="w-full md:w-1/2 group overflow-hidden rounded-xl h-[500px]">
+<img alt="High-end architectural interior photography of a luxury modern home under construction" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3DC3P8znaIIaKZQZas_ZkOzNHvrB0mneg9trYY6in6C_97t6dTJPYEU4-e81Hn-aQqBf-z2LZHTT8w6f2J3WydHWgZGWqCtWpZwKk1fQ8w-9BTBrCgflXltlGeMDU5LpMmmdNhAMBJRarqY2qOpeutnQQ6sZknqFN0jI5EkFKID2Sf4PtCESDn3ao9UMLNqS7xWJKTTVqvhoWZyfNDohzxgTp_npTi68wvBTY5VV5fWZPNqv0PV1-JVkc-ggeqEUv89ctYbKaSG30">
+</div>
+<div class="w-full md:w-1/2 flex flex-col justify-center px-4 md:px-12 transition-all duration-700 opacity-100 translate-y-0">
+<h2 class="font-headline-lg text-headline-lg mb-stack-md text-deep-charcoal transition-all duration-700 opacity-100 translate-y-0">Construction</h2>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Structural engineering &amp; foundations</span>
+</li>
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">End-to-end building execution</span>
+</li>
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">On-site supervision &amp; management</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Row 6 (New: Planning & Consultation) -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-gutter transition-all duration-700 opacity-100 translate-y-0 scroll-mt-32" id="planning-consultation">
+<div class="w-full md:w-1/2 group overflow-hidden rounded-xl h-[500px]">
+<img alt="High-res close-up of architectural blueprints and professional compass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBAcl1WoCq5Db6MGpg9JVdGMetZ1Ayt7WelqwxlpPegr-nHWQfDpbh-Yp964FtL0VsY1Cl0XBin3CR7rMMqp35Kry5ojtOizjiKAbDkdXU3bJzxhnY9xZuzxDBjDze-1XVZFhtz4Zq_ut86vCdUfSSBcmWUv7X_BmzqrcenKXgc1dhCzc-7EZMJ0G39blPBqLhEhBkMrz73PtCgEi2drBnmEx3lXBys9ghFrK-pzec9m0r3zCxiuDbCwfiRmVKvc82teUG57h2bj2Q">
+</div>
+<div class="w-full md:w-1/2 flex flex-col justify-center px-4 md:px-12 transition-all duration-700 opacity-100 translate-y-0">
+<h2 class="font-headline-lg text-headline-lg mb-stack-md text-deep-charcoal transition-all duration-700 opacity-100 translate-y-0">Planning &amp; Consultation</h2>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Detailed spatial analysis</span>
+</li>
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Vastu &amp; architectural compliance</span>
+</li>
+<li class="flex items-center gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-body-lg text-body-lg text-deep-charcoal">Budget forecasting &amp; timelines</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- How We Work -->
+<section class="bg-[#121212] py-section-padding-v px-section-padding-h text-surface">
+<div class="max-w-[1440px] mx-auto">
+<div class="mb-stack-lg text-center">
+<h2 class="font-headline-lg text-headline-lg mb-stack-md transition-all duration-700 opacity-100 translate-y-0">The Architectural Process</h2>
+<div class="h-1 w-24 bg-primary-fixed mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-16">
+<div class="glass-card p-stack-lg rounded-xl flex flex-col gap-4 group hover:bg-white/5 transition-all duration-700 opacity-100 translate-y-0">
+<div class="font-display-lg text-primary-fixed text-6xl opacity-50 font-bold group-hover:opacity-100 transition-opacity">01.</div>
+<h3 class="font-headline-md text-headline-md text-white">Consultation</h3>
+<p class="font-body-lg text-body-lg text-surface-container-highest">Understanding your vision and spatial requirements.</p>
+</div>
+<div class="glass-card p-stack-lg rounded-xl flex flex-col gap-4 group hover:bg-white/5 transition-all duration-700 opacity-100 translate-y-0">
+<div class="font-display-lg text-primary-fixed text-6xl opacity-50 font-bold group-hover:opacity-100 transition-opacity">02.</div>
+<h3 class="font-headline-md text-headline-md text-white">Design &amp; Curation</h3>
+<p class="font-body-lg text-body-lg text-surface-container-highest">Detailed 3D modeling and material selection.</p>
+</div>
+<div class="glass-card p-stack-lg rounded-xl flex flex-col gap-4 group hover:bg-white/5 transition-all duration-700 opacity-100 translate-y-0">
+<div class="font-display-lg text-primary-fixed text-6xl opacity-50 font-bold group-hover:opacity-100 transition-opacity">03.</div>
+<h3 class="font-headline-md text-headline-md text-white">Flawless Execution</h3>
+<p class="font-body-lg text-body-lg text-surface-container-highest">In-house manufacturing and precision installation.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="relative py-32 px-section-padding-h text-center overflow-hidden min-h-[60vh] flex items-center justify-center">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Modern architectural interior" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlt5Ax0knJOTqmyeNRk0kUg2fOy5zBpUErzwbfXfJMu4-QzhA0QpC7euQUitT2tYvjT4FSW_pkpvQPOsxezLGbA3dd1MiY5kOhlYEHqThpTxaOtOeNxPGrgQ3MYgpPjUf8YUw_YWmp5NakFFFLebJlLmAiXX0IFYHL0ZiA2y78r4Pe1VvJ66AIMwS1BuDvKRdlA2n82bT8AeztNw9PrR4mytOqFSimUrpBYCEIK4vECL8ZP6k6Wq_xDb1ARu4M4DKPq2oSwcqxSCz5">
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-transparent"></div>
+</div>
+<!-- Content Container -->
+<div class="relative z-10 max-w-4xl mx-auto">
+<!-- Accent Line -->
+<div class="w-12 h-1 bg-primary-fixed mx-auto mb-8"></div>
+<h2 class="font-display-lg text-display-lg text-white mb-stack-lg leading-tight transition-all duration-700 opacity-100 translate-y-0">
+                    Let’s build something beautiful together.
+                </h2>
+<button class="bg-primary-fixed text-black font-label-bold text-label-bold px-12 py-5 rounded-full hover:scale-105 hover:shadow-[0_0_20px_rgba(196,225,57,0.4)] transition-all duration-300">
+                    Schedule a Consultation
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-[#231F20] text-white py-12 px-[5%] font-body-md">
+<div class="max-w-[1440px] mx-auto">
+<!-- Top Bar -->
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+<!-- Logo -->
+<div class="w-48">
+<img alt="Ionic Interiors Logo" class="w-full h-auto object-contain mix-blend-lighten" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv_Maqacwkkb7vm_7oMYP1MjwmXG8f6HuUnXeGVjQmmuDcPhU53mBwWIoh9d_v0PRFU-gOzfKHIaeFtTn-LB_tiHd4rEOTvOwdvyYfDogKo9PPlBVJKNa1q6pz6eYrfBWnDRqiCOtoKawnrZSZIiQgx-S-dX1Dcz9zmnJbPbCfQBOhtcEF6--ErZfrctG1HUO2_rLDmZBtk-eVlEFgdSmxn_2jfo0v2PwSgyIANzo6CYUohLh7BEA6rzYhzB7unu8YcXNw0h5gFdFv">
+</div>
+<!-- Social Icons -->
+<div class="flex gap-4 transition-all duration-700 opacity-100 translate-y-0">
+<a class="bg-[#1A1A1A] w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary-fixed transition-colors group" href="#">
+<img width="24" height="24" src="https://img.icons8.com/material-rounded/24/c4e139/facebook-circled--v1.png" alt="facebook-circled--v1"/></a>
+<a class="bg-[#1A1A1A] w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary-fixed transition-colors group" href="#">
+<span class="material-symbols-outlined text-white group-hover:text-black text-xl">x</span>
+</a>
+<a class="bg-[#1A1A1A] w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary-fixed transition-colors group" href="#">
+<span class="material-symbols-outlined text-white group-hover:text-black text-xl">smart_display</span>
+</a>
+<a class="bg-[#1A1A1A] w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary-fixed transition-colors group" href="#">
+<span class="material-symbols-outlined text-white group-hover:text-black text-xl">photo_camera</span>
+</a>
+</div>
+<!-- Newsletter -->
+<div class="bg-[#231F20] border border-primary-fixed rounded-full px-6 py-3 flex items-center justify-between w-full md:w-80 cursor-pointer transition-all duration-700 opacity-100 translate-y-0">
+<span class="text-white font-label-bold">Enter your Email</span>
+<span class="material-symbols-outlined text-primary-fixed">arrow_forward</span>
+</div>
+</div>
+<!-- Divider -->
+<div class="w-full h-px bg-white/10 mb-12"></div>
+<!-- Bottom Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<!-- Column 1 -->
+<div class="flex flex-col gap-6 transition-all duration-700 opacity-100 translate-y-0">
+<h4 class="font-bold text-primary-fixed tracking-wider">QUICK LINKS</h4>
+<ul class="space-y-4">
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed text-sm">chevron_right</span>
+<a class="hover:text-primary-fixed transition-colors" href="index.html">Home</a>
+</li>
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed text-sm">chevron_right</span>
+<a class="hover:text-primary-fixed transition-colors" href="about.html">About</a>
+</li>
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed text-sm">chevron_right</span>
+<a class="hover:text-primary-fixed transition-colors" href="services.html">Services</a>
+</li>
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed text-sm">chevron_right</span>
+<a class="hover:text-primary-fixed transition-colors" href="careers.html">Careers</a>
+</li>
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed text-sm">chevron_right</span>
+<a class="hover:text-primary-fixed transition-colors" href="contact.html">Contact</a>
+</li>
+</ul>
+</div>
+<!-- Column 2 -->
+<div class="flex flex-col gap-6 transition-all duration-700 opacity-100 translate-y-0">
+<h4 class="font-bold text-primary-fixed tracking-wider">SERVICES</h4>
+<ul class="space-y-4">
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed text-sm">chevron_right</span>
+<a class="hover:text-primary-fixed transition-colors" href="services.html#residential-interiors">Residential Interiors</a>
+</li>
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed text-sm">chevron_right</span>
+<a class="hover:text-primary-fixed transition-colors" href="services.html#commercial-interiors">Commercial Interiors</a>
+</li>
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed text-sm">chevron_right</span>
+<a class="hover:text-primary-fixed transition-colors" href="services.html#modular-kitchens-wardrobes">Modular Furniture</a>
+</li>
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed text-sm">chevron_right</span>
+<a class="hover:text-primary-fixed transition-colors" href="services.html#bespoke-furniture-soft-furnishings">Custom Furniture &amp; Decor</a>
+</li>
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed text-sm">chevron_right</span>
+<a class="hover:text-primary-fixed transition-colors" href="services.html#construction">Construction</a>
+</li>
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed text-sm">chevron_right</span>
+<a class="hover:text-primary-fixed transition-colors" href="services.html#planning-consultation">Planning &amp; Consultation</a>
+</li>
+</ul>
+</div>
+<!-- Column 3 -->
+<div class="flex flex-col gap-6 transition-all duration-700 opacity-100 translate-y-0">
+<h4 class="font-bold text-primary-fixed tracking-wider">POPULAR</h4>
+<ul class="space-y-4">
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed text-sm">photo_camera</span>
+<a class="hover:text-primary-fixed transition-colors" href="#">Instagram</a>
+</li>
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<img width="24" height="24" src="https://img.icons8.com/material-rounded/24/c4e139/facebook-circled--v1.png" alt="facebook-circled--v1"/>
+<a class="hover:text-primary-fixed transition-colors" href="#">Facebook</a>
+</li>
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed text-sm">smart_display</span>
+<a class="hover:text-primary-fixed transition-colors" href="#">YouTube</a>
+</li>
+<li class="flex items-center gap-2 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed text-sm">work</span>
+<a class="hover:text-primary-fixed transition-colors" href="#">LinkedIn</a>
+</li>
+</ul>
+</div>
+<!-- Column 4 -->
+<div class="flex flex-col gap-6 transition-all duration-700 opacity-100 translate-y-0">
+<h4 class="font-bold text-primary-fixed tracking-wider">CONTACT INFO</h4>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed">call</span>
+<span class="">9556521197</span>
+</li>
+<li class="flex items-start gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed">mail</span>
+<span class="">info@ionicinteriors.in</span>
+</li>
+<li class="flex items-start gap-3 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-primary-fixed">location_on</span>
+<span class="">Raghunathpur, patia, Bhubaneswar, India 751024</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Final Row -->
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 gap-4">
+<p class="text-white/60 text-sm">© 2024 Ionic Interiors. All Rights Reserved.</p>
+<div class="flex gap-6 text-sm text-white/60 transition-all duration-700 opacity-100 translate-y-0">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            const animatedElements = document.querySelectorAll('.grid > div, .flex-col > .flex, h2, ul li');
+            animatedElements.forEach(el => {
+                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
+    </script>
+<!-- Floating WhatsApp -->
+<a class="fixed bottom-8 right-8 w-16 h-16 bg-[#C4E139] rounded-full shadow-2xl flex items-center justify-center text-black hover:scale-110 active:scale-95 transition-all z-[100] group" href="https://wa.me/919556521197" target="_blank">
+<svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+</a>
+</body></html>

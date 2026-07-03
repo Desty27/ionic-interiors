@@ -1,0 +1,427 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>About Us | Ionic Interiors</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "tertiary-fixed-dim": "#c6c6c7",
+                "inverse-primary": "#C4E139",
+                "on-primary-fixed": "#000000",
+                "on-tertiary-container": "#666768",
+                "secondary-fixed": "#e5e2e1",
+                "surface-variant": "#e4e2e1",
+                "on-surface-variant": "#414a35",
+                "surface-container-highest": "#e4e2e1",
+                "surface-dim": "#dcd9d9",
+                "on-error-container": "#93000a",
+                "surface-bright": "#FAF0E6",
+                "secondary": "#5f5e5e",
+                "surface-container": "#f0eded",
+                "on-primary-container": "#C4E139",
+                "on-secondary-container": "#656464",
+                "on-primary": "#000000",
+                "surface": "#FAF0E6",
+                "on-tertiary": "#ffffff",
+                "inverse-surface": "#303030",
+                "primary-fixed": "#C4E139",
+                "inverse-on-surface": "#f3f0ef",
+                "surface-container-low": "#FAF0E6",
+                "background": "#FAF0E6",
+                "outline-variant": "#c0caaf",
+                "secondary-fixed-dim": "#c8c6c5",
+                "error": "#ba1a1a",
+                "on-secondary-fixed-variant": "#474646",
+                "on-primary-fixed-variant": "#000000",
+                "outline": "#717a62",
+                "on-error": "#ffffff",
+                "on-tertiary-fixed": "#1a1c1c",
+                "primary": "#C4E139",
+                "on-tertiary-fixed-variant": "#454747",
+                "surface-container-lowest": "#FAF0E6",
+                "on-secondary": "#ffffff",
+                "secondary-container": "#e5e2e1",
+                "primary-fixed-dim": "#C4E139",
+                "primary-container": "#C4E139",
+                "tertiary-container": "#e7e7e7",
+                "on-secondary-fixed": "#1c1b1b",
+                "surface-container-high": "#eae7e7",
+                "on-background": "#1A1A1A",
+                "on-surface": "#1A1A1A",
+                "tertiary-fixed": "#e2e2e2",
+                "tertiary": "#5d5f5f",
+                "surface-tint": "#C4E139",
+                "error-container": "#ffdad6",
+                "brand-black": "#000000",
+                "brand-white": "#FAF0E6",
+                "brand-charcoal": "#1A1A1A",
+                "brand-lime": "#C4E139",
+                "ebonized-black": "#231F20"
+            },
+            "spacing": {
+                "stack-lg": "48px",
+                "section-padding-v": "120px",
+                "section-padding-h": "5%",
+                "stack-sm": "8px",
+                "stack-md": "24px",
+                "gutter": "24px",
+                "bento-gap": "16px"
+            },
+            "fontFamily": {
+                "label-bold": ["Manrope"],
+                "body-md": ["Manrope"],
+                "body-lg": ["Manrope"],
+                "headline-md": ["Playfair Display"],
+                "headline-lg-mobile": ["Playfair Display"],
+                "headline-lg": ["Playfair Display"],
+                "display-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-brand-white text-on-surface font-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#231F20] shadow-sm">
+<div class="grid grid-cols-3 items-center px-section-padding-h py-4 max-w-full mx-auto">
+<div class="flex justify-start">
+<a class="font-display-lg text-headline-md tracking-tighter text-white" href="about.html">
+<img alt="Ionic Interiors Logo" class="h-16 object-contain mix-blend-lighten" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM6rn4IT2c5UvbdEJWfduIOJ6cSpMBPWUDMpI-28b74RUIfck9nEXp1Y2nPeRVaTRoNP8mGKUCpMo9BXCdlcksAiGP95aOfHEQcQtX4LQnRt9J_jMhKoxP4PW_tAAqFWJ8XCCJJsYCo83oC_hZq-poLMpB0H0-HdPo5I45sTql9Ukt9u6CfLUB-LNMNPg3AEdB2p-S78yXsKNe7pDjyfIHQOTD_K1OCe7TKPDHCRMnDI7ABclgLfVQIOE8eI4TS-TjbHbvylhPQWLL">
+</a>
+</div>
+<div class="hidden md:flex items-center justify-center gap-8">
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="index.html">Home</a>
+<a class="text-brand-lime font-bold border-b-2 border-brand-lime pb-1" href="about.html">About</a>
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="services.html">Services</a>
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="blog.html">Blog</a>
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="careers.html">Careers</a>
+<a class="text-white font-body-md hover:text-brand-lime transition-all duration-200" href="contact.html">Contact</a>
+</div>
+<div class="flex justify-end items-center">
+<button class="bg-brand-lime text-brand-charcoal px-6 py-2.5 rounded-lg font-label-bold hover:scale-105 active:opacity-80 transition-transform">Get a Quote</button>
+<button class="md:hidden text-white p-2 min-w-[44px] min-h-[44px] ml-4">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Section 1: Hero -->
+<section class="relative min-h-screen flex flex-col justify-center items-center overflow-hidden pt-20" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDlyI1zlmDwmNJF43GBZ2CNQ9nb3dpkbUedUvSo1JG9CEn5nDKH9LjyJcnstBZvXdBQjcf0en8L8Lr16JGZHUjpttUuAiHWVo-Wdl5Ioh2RBVQfY6-IvQpdGnIB639Y9atB8-HZvFqqJSnVG4fxGHCkDjOWO2Jm62johHVUmk-i_x3WIFwx0jOVBpmUsk0rmbqMuMExGc881KxYeIXmiyy4OVKFYybSKYf-oqLbVfruN007neIV1t0CunH9PJZMFwUMLXM4gCGMBtxSmJ0&quot;); background-size: cover; background-position: center top;">
+<div class="z-10 text-center px-section-padding-h max-w-5xl">
+<h1 class="font-display-lg text-display-lg text-white mb-8 reveal active">
+                Designing spaces that elevate the human experience.
+            </h1>
+</div>
+</section>
+<!-- Section 2: Our Story -->
+<section class="py-section-padding-v px-section-padding-h bg-brand-white">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+<div class="relative grid grid-cols-2 gap-4 reveal active">
+<div class="space-y-4">
+<img class="w-full aspect-[3/4] object-cover rounded-xl shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACIapYvAzQzPZH30HT2XWLjAFU0EYv6iIdwon7MTE9dHemvegmzcZnIVJcJD_tZCm55ni4HsaIVPhvN2-EyoxgaV_ZnNLVPmaMH57BBK9DvrvifAX1VLXkJHQ0ycWPa4fZ0SVchsUL1HoFbSF7mMz61eXiR4MwnfORRQa1jYCJKR5jyk_3hEWhIAQVqCxpH6vjWDg15NnBIcA1tXlTlgxfVcXS9g0TVvb1ssb6ITLYgrGpV0PE118QCe_bDU89MM04NQr7-6qUlqUc">
+<img class="w-full aspect-square object-cover rounded-xl shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqweb8Wz6f0f_wFlcL3fFGWWfvOAwjmVgvalom9058zdnVLRdJoG-RGh3_CJJeSErYrxsKJT99sP-PHd3GH7ZFIYd54YGKlNwKpJPVpa30m0K2MfhHmzqNjLe_xEBOwaPOr4YvkW3mfxgCpZZZ-p1Vdifl0TxWgeOzIcZC2VmpxM8c3gPJI39zLeMsRF2YlAPcVN3GRyu_sy9iH32f3kD9s-MxmY7dO7twpazCnq4jyyB8-ZldwdtOME14GOKT8mbf-GOzs1LSdF6tXF8">
+</div>
+<div class="pt-12">
+<img class="w-full aspect-[3/4] object-cover rounded-xl shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj4UWy9ojuIGcwmw1jJBwLyO5NfuX2oef7XN7lSsWJL2Qd77ufyX124yjXaD8FvnH7KV8IgPxneQbT-SjQS1vx80X0CCy9JI9NnNk8O_CaEwMxDXFkxs3VFpNtwPt_i82U6_ynouK45TuOXpaFDBF8oaKvgLKx30v5-5fncSc5I3i-wIcIZLh2RTndCEbtndMKTAC4HZ_YUXlCA7DpCAuIlhZgEKhyCaRtvya-vahFSE7GxM7CS9OKwOC57Haa7ox2rqfqJ-N-iyS1wzA">
+</div>
+</div>
+<div class="reveal active" style="transition-delay: 200ms;">
+<span class="text-brand-lime font-label-bold text-label-bold bg-brand-black px-4 py-1 rounded-full inline-block mb-6">OUR STORY</span>
+<h2 class="font-headline-lg text-headline-lg text-brand-charcoal mb-8">Design to Create Happiness</h2>
+<p class="font-body-lg text-body-lg text-brand-charcoal mb-8 leading-relaxed">
+                    At Ionic Interiors, we believe that great spaces have the power to inspire happiness, enrich lifestyles and create memories that last for generations. With over 14 years of excellence in Architecture, Interior Design and Construction, we are committed to delivering thoughtfully designed environments that combine functionality, aesthetics and enduring value. From concept development to project completion, we provide comprehensive solutions under one roof, ensuring a seamless and professionally managed experience for our clients. Driven by innovation, craftsmanship and attention to detail, we transform aspirations into timeless spaces that reflect individuality, comfort and elegance. Whether it is a dream home, commercial office, hospitality space or turnkey construction project, our mission is to create environments that inspire and elevate everyday living.
+                </p>
+<p class="font-body-md text-brand-charcoal mb-10 font-bold">
+                    Creating Spaces. Inspiring Happiness. Building Trust.
+                </p>
+<button class="border-2 border-brand-lime text-brand-charcoal hover:bg-brand-lime hover:text-brand-black transition-all duration-300 px-8 py-3 rounded-lg font-label-bold text-label-bold">
+                    Learn About Our Process
+                </button>
+</div>
+</div>
+</section>
+<!-- Section 3: The Numbers -->
+<section class="bg-brand-charcoal py-24 px-section-padding-h border-y border-white/5">
+<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-gutter text-center">
+<div class="reveal border-r border-white/10 last:border-r-0 active">
+<div class="font-display-lg text-headline-lg text-brand-lime mb-2">500+</div>
+<div class="font-label-bold text-label-bold text-white uppercase tracking-widest">Projects Completed</div>
+</div>
+<div class="reveal border-r border-white/10 last:border-r-0 active" style="transition-delay: 100ms;">
+<div class="font-display-lg text-headline-lg text-brand-lime mb-2">14+</div>
+<div class="font-label-bold text-label-bold text-white uppercase tracking-widest">Years Experience</div>
+</div>
+<div class="reveal border-r border-white/10 last:border-r-0 active" style="transition-delay: 150ms;">
+<div class="font-display-lg text-headline-lg text-brand-lime mb-2">25+</div>
+<div class="font-label-bold text-label-bold text-white uppercase tracking-widest">Cities and Growing</div>
+</div>
+<div class="reveal border-r border-white/10 last:border-r-0 active" style="transition-delay: 200ms;">
+<div class="font-display-lg text-headline-lg text-brand-lime mb-2">50+</div>
+<div class="font-label-bold text-label-bold text-white uppercase tracking-widest">Expert Designers</div>
+</div>
+<div class="reveal active" style="transition-delay: 300ms;">
+<div class="font-display-lg text-headline-lg text-brand-lime mb-2">100%</div>
+<div class="font-label-bold text-label-bold text-white uppercase tracking-widest">Quality Assured</div>
+</div>
+</div>
+</section>
+<!-- NEW SECTION: Mission & Vision -->
+<section class="bg-ebonized-black py-section-padding-v px-section-padding-h"><div class="max-w-7xl mx-auto space-y-stack-lg">
+<div class="flex flex-col md:flex-row items-start gap-8 reveal active">
+<div class="md:w-1/3">
+<h4 class="text-brand-lime font-display-lg text-4xl uppercase tracking-tighter">Our Mission</h4>
+<div class="h-1 w-12 bg-brand-lime mt-4"></div>
+</div>
+<div class="md:w-2/3">
+<p class="text-white text-2xl font-serif leading-relaxed">
+        To provide innovative, functional and aesthetically inspiring design and construction solutions that enhance lifestyles while maintaining the highest standards of quality, professionalism and customer satisfaction.
+      </p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row-reverse items-start gap-8 reveal active" style="transition-delay: 200ms;">
+<div class="md:w-1/3 md:text-right">
+<h4 class="text-brand-lime font-display-lg text-4xl uppercase tracking-tighter">Our Vision</h4>
+<div class="h-1 w-12 bg-brand-lime mt-4 md:ml-auto"></div>
+</div>
+<div class="md:w-2/3">
+<p class="text-white text-2xl font-serif leading-relaxed">
+        To become one of the most trusted and admired design and construction brands by delivering excellence through creativity, technical expertise and unwavering commitment to quality.
+      </p>
+</div>
+</div>
+</div></section>
+<!-- Section 4: Core Values -->
+<section class="py-section-padding-v px-section-padding-h bg-brand-white overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16 reveal active">
+<h2 class="font-headline-lg text-headline-lg text-brand-charcoal">Principles we live by.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-bento-gap h-auto md:h-[600px]">
+<div class="md:col-span-2 bg-brand-charcoal rounded-xl p-12 relative overflow-hidden group reveal active">
+<div class="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]"></div>
+<div class="relative z-10 h-full flex flex-col justify-end">
+<span class="material-symbols-outlined text-brand-lime text-4xl mb-4">architecture</span>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Obsessive Attention to Detail</h3>
+<p class="text-white/70 max-w-md">Our blueprints are more than lines; they are carefully considered narratives for how life unfolds within a space.</p>
+</div>
+</div>
+<div class="bg-brand-black rounded-xl p-12 flex flex-col justify-between group reveal active" style="transition-delay: 150ms;">
+<span class="material-symbols-outlined text-brand-lime text-6xl" style="font-variation-settings: &quot;FILL&quot; 1;">verified</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Uncompromising Quality</h3>
+<p class="text-white/70">We source only the finest materials, ensuring that every finish meets our rigorous standard for luxury and durability.</p>
+</div>
+</div>
+<div class="md:col-span-3 bg-surface-container rounded-xl p-12 shadow-sm border border-outline-variant/10 group reveal active" style="transition-delay: 300ms;">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+<div class="max-w-xl">
+<h3 class="font-headline-md text-headline-md text-brand-charcoal mb-4">Client-Centric Approach</h3>
+<p class="text-brand-charcoal">Your vision is our compass. We foster deep collaborations to ensure the final result is a perfect reflection of your lifestyle and aspirations.</p>
+</div>
+<span class="material-symbols-outlined text-brand-charcoal text-5xl opacity-20">diversity_3</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Founder's Profile -->
+<section class="bg-brand-white py-section-padding-v px-section-padding-h">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="reveal active">
+<img alt="Mr. Subhransu Mahala, Founder of Ionic Interiors" class="w-full aspect-[3/4] object-cover rounded-2xl shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPCC3qMwLC9-ILH5JHm1Cp0SPu7bzS0OhwTjYS0FLjwni1l-TciS-osrICUlEISGbPkLE-tddWwtOsPDBYCu8mR3Plz8ZZorIvJYKYWQlj4F0_A__DbH_ZKETxw_JHDQ8bVMm3NoLMfcxV6CFFeAmavvHzVW1_CfsQd_WqW3xwq6PiFV2AyGs7Yy9xJDu75BWkXsppKrgn5l5RKVGoe_Cpk-xvd5cHWf6KwuYPXtMsupS0ma6FUOT6cN_C-3_NjsUD12gW-OQejvD5tjk">
+</div>
+<div class="reveal active" style="transition-delay: 200ms;">
+<span class="text-brand-lime font-label-bold text-label-bold tracking-widest uppercase mb-4 block">Founder &amp; Proprietor, Ionic Interiors</span>
+<h2 class="font-headline-lg text-headline-lg text-brand-charcoal mb-8 font-serif">Meet Mr. Subhransu Mahala</h2>
+<div class="space-y-6 font-body-lg text-brand-charcoal leading-relaxed">
+<p class="">Subhransu Mahala is the Founder and Proprietor of Ionic Interiors, a professionally managed Architecture, Interior Design and Construction firm based in Bhubaneswar, Odisha. With more than 14 years of industry experience, he has been instrumental in delivering thoughtfully designed residential, commercial and turnkey projects that combine creativity, technical expertise and superior execution. His passion lies in transforming ideas into meaningful spaces that enhance lifestyles and create lasting value.</p>
+<p class="">Guided by the philosophy of 'Design to Create Happiness,' he believes that architecture and interiors should not merely serve functional purposes but should inspire emotions, comfort and timeless elegance. Under his leadership, Ionic Interiors has evolved into a trusted name, offering end-to-end solutions in Architecture, Interior Design, Construction, Modular Furniture and Premium Home Solutions. His commitment to quality, transparency and customer satisfaction continues to drive the company's vision of creating exceptional spaces and building enduring relationships.</p>
+<blockquote class="italic font-serif border-l-4 border-brand-lime pl-6 py-2 text-2xl text-brand-charcoal mt-8">
+                        "We don't simply construct buildings; we create spaces that inspire happiness and become a legacy for generations."
+                    </blockquote>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Closing CTA -->
+<section class="bg-brand-black py-section-padding-v px-section-padding-h text-center relative overflow-hidden" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgb(35, 31, 32) 100%), url('../assets/dark-bg(about).png'); background-size: cover; background-position: center center;">
+<div class="relative z-10 max-w-4xl mx-auto">
+<h2 class="font-display-lg text-headline-lg text-white mb-12 reveal active">Ready to transform your space?</h2>
+<button class="bg-brand-lime text-brand-black px-12 py-6 rounded-lg font-label-bold text-label-bold text-lg hover:scale-105 hover:shadow-[0_0_30px_rgba(196,225,57,0.4)] transition-all duration-300 reveal active" style="transition-delay: 200ms;">
+                Start Your Project
+            </button>
+</div>
+</section>
+</main>
+<!-- Footer Rebuild -->
+<footer class="bg-ebonized-black text-white py-16 px-section-padding-h border-t border-white/5">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+<div class="h-16">
+<img alt="Ionic Interiors" class="h-full w-auto object-contain mix-blend-lighten" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB99UCghvfgS5QIII2Nz-kkEEbvHVUWLhN4Q2VbkXMz67ii07JfdFzHDHoU6yxjJ7xeooWVKAcfOTnIllfTqKRNlBaCTVQ4xZ8lpU71yRRtcF2YKVWjhGpqHc3q20kUAafB_82JtPvAq03FPxalD97gKraochnc-GIbzqKvRrHOuhxvqWHA8ymjs7s2_OwOmqG3XKOTklBFKDhG5YKrMhpI45IMWclrjBB0tH_Qtp5xtpcKoob5Vm3e8JR1V7kM6s0AP5aGKJWirkXU">
+</div>
+<div class="w-full md:w-auto">
+<div class="bg-brand-lime rounded-full px-6 py-3 flex items-center justify-between min-w-[300px] cursor-pointer hover:opacity-90 transition-opacity">
+<span class="text-brand-black font-label-bold">Enter your Email</span>
+<span class="material-symbols-outlined text-brand-black">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="w-full h-px bg-white/10 mb-12"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Col 1 -->
+<div>
+<h5 class="text-brand-lime font-bold mb-6 uppercase tracking-widest text-sm">Quick Links</h5>
+<ul class="space-y-4">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-lime text-lg">chevron_right</span>
+<a class="hover:text-brand-lime transition-colors" href="index.html">Home</a>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-lime text-lg">chevron_right</span>
+<a class="text-brand-lime font-bold" href="about.html">About</a>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-lime text-lg">chevron_right</span>
+<a class="hover:text-brand-lime transition-colors" href="services.html">Services</a>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-lime text-lg">chevron_right</span>
+<a class="hover:text-brand-lime transition-colors" href="careers.html">Careers</a>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-lime text-lg">chevron_right</span>
+<a class="hover:text-brand-lime transition-colors" href="contact.html">Contact</a>
+</li>
+</ul>
+</div>
+<!-- Col 2 -->
+<div>
+<h5 class="text-brand-lime font-bold mb-6 uppercase tracking-widest text-sm">Services</h5>
+<ul class="space-y-4">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-lime text-lg">chevron_right</span>
+<a class="hover:text-brand-lime transition-colors" href="services.html#residential-interiors">Residential Interiors</a>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-lime text-lg">chevron_right</span>
+<a class="hover:text-brand-lime transition-colors" href="services.html#commercial-interiors">Commercial Interiors</a>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-lime text-lg">chevron_right</span>
+<a class="hover:text-brand-lime transition-colors" href="services.html#modular-kitchens-wardrobes">Modular Furniture</a>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-lime text-lg">chevron_right</span>
+<a class="hover:text-brand-lime transition-colors" href="services.html#bespoke-furniture-soft-furnishings">Custom Furniture &amp; Decor</a>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-lime text-lg">chevron_right</span>
+<a class="hover:text-brand-lime transition-colors" href="services.html#construction">Construction</a>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-lime text-lg">chevron_right</span>
+<a class="hover:text-brand-lime transition-colors" href="services.html#planning-consultation">Planning &amp; Consultation</a>
+</li>
+</ul>
+</div>
+<!-- Col 3 -->
+<div>
+<h5 class="text-brand-lime font-bold mb-6 uppercase tracking-widest text-sm">Popular</h5>
+<ul class="space-y-4">
+<li class="flex items-center gap-2">
+<a class="text-white flex items-center gap-2 hover:text-brand-lime transition-colors" href="#"><span class="material-symbols-outlined text-brand-lime text-lg" style="color: rgb(196, 225, 57);">photo_camera</span>Instagram</a>
+</li>
+<li class="flex items-center gap-2">
+<a class="text-white flex items-center gap-2 hover:text-brand-lime transition-colors" href="#"><img width="24" height="24" src="https://img.icons8.com/material-rounded/24/c4e139/facebook-circled--v1.png" alt="facebook-circled--v1"/>Facebook</a>
+</li>
+<li class="flex items-center gap-2">
+<a class="text-white flex items-center gap-2 hover:text-brand-lime transition-colors" href="#"><span class="material-symbols-outlined text-brand-lime text-lg" style="color: rgb(196, 225, 57);">play_circle</span>YouTube</a>
+</li>
+<li class="flex items-center gap-2">
+<a class="text-white flex items-center gap-2 hover:text-brand-lime transition-colors" href="#"><span class="material-symbols-outlined text-brand-lime text-lg" style="color: rgb(196, 225, 57);">work</span>LinkedIn</a>
+</li>
+</ul>
+</div>
+<!-- Col 4 -->
+<div>
+<h5 class="text-brand-lime font-bold mb-6 uppercase tracking-widest text-sm">Contact Info</h5>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-brand-lime">call</span>
+<span class="">9556521197</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-brand-lime">mail</span>
+<span class="break-all">info@ionicinteriors.in</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-brand-lime">location_on</span>
+<span class="leading-relaxed">Raghunathpur, patia, Bhubaneswar, India 751024</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-white/5 text-center text-sm opacity-60">
+<p class="">© 2024 Ionic Interiors. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+
+
+
+<!-- Floating WhatsApp -->
+<a class="fixed bottom-8 right-8 w-16 h-16 bg-brand-lime rounded-full shadow-2xl flex items-center justify-center text-brand-charcoal hover:scale-110 active:scale-95 transition-all z-[100] group" href="https://wa.me/919556521197" target="_blank">
+<svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+</a>
+</body></html>

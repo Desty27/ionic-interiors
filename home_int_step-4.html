@@ -343,11 +343,21 @@
 </div>
 
 <script>
-  // ── Pricing Config ──
-  const BHK_BASE = { "1 BHK": 350000, "2 BHK": 550000, "3 BHK": 800000, "4 BHK": 1100000, "5 BHK": 1500000 };
-  const ROOM_RATES = { living: 60000, kitchen: 80000, bedroom: 55000, bathroom: 35000 };
-  const PKG_MULTIPLIER = { Essentials: 1.0, Premium: 1.4, Luxe: 1.9 };
-  const MARGIN = 0.3;
+  // ── Pricing Config (per sq.ft.) ──
+  // Essentials = Standard, Premium = Luxury, Luxe = Ultra Luxury
+  const TIER_RATES = {
+    Essentials: { lo: 1200, hi: 1600 },
+    Premium:    { lo: 1700, hi: 2400 },
+    Luxe:       { lo: 2500, hi: 4000 }
+  };
+
+  const BHK_SQFT = {
+    "1 BHK":             { Small: 500,  Large: 500  },
+    "2 BHK":             { Small: 800,  Large: 1200 },
+    "3 BHK":             { Small: 1200, Large: 2000 },
+    "4 BHK":             { Small: 2000, Large: 2500 },
+    "5 BHK":             { Small: 3000, Large: 3000 }
+  };
 
   function fmt(n) {
     if (n >= 10000000) return "₹" + (n/10000000).toFixed(1).replace(/\.0$/,'') + "Cr";
@@ -358,31 +368,20 @@
   function getP(k) { return new URLSearchParams(window.location.search).get(k) || sessionStorage.getItem(k) || ""; }
 
   function calcPrice() {
-    const bhk  = getP("BHK_Type")  || "2 BHK";
-    const pkg  = getP("package")   || "Essentials";
-    const lc   = parseInt(getP("living_count"))   || 1;
-    const kc   = parseInt(getP("kitchen_count"))  || 1;
-    const bc   = parseInt(getP("bedroom_count"))  || 1;
-    const bac  = parseInt(getP("bathroom_count")) || 1;
+    const bhk     = getP("BHK_Type")    || "2 BHK";
+    const subtype = getP("BHK_Subtype") || "Small";
+    const pkg     = getP("package")     || "Essentials";
 
-    const roomTotal = (lc * ROOM_RATES.living) + (kc * ROOM_RATES.kitchen) + (bc * ROOM_RATES.bedroom) + (bac * ROOM_RATES.bathroom);
-    const base = (BHK_BASE[bhk] || 550000) + roomTotal;
-    const total = base * (PKG_MULTIPLIER[pkg] || 1.0);
-
-    const lo = Math.round(total * (1 - MARGIN) / 10000) * 10000;
-    const hi = Math.round(total * (1 + MARGIN) / 10000) * 10000;
+    const sqft = (BHK_SQFT[bhk] && BHK_SQFT[bhk][subtype]) || 800;
+    const tier = TIER_RATES[pkg] || TIER_RATES.Essentials;
+    const lo = sqft * tier.lo;
+    const hi = sqft * tier.hi;
 
     document.getElementById("priceDisplay").textContent = fmt(lo) + " – " + fmt(hi);
 
-    // Summary
-    document.getElementById("sum-bhk").textContent  = bhk;
+    document.getElementById("sum-bhk").textContent  = bhk + " (" + subtype + ")";
     document.getElementById("sum-pkg").textContent  = pkg;
-    const rooms = [];
-    if (lc)  rooms.push(lc + " Living");
-    if (kc)  rooms.push(kc + " Kitchen");
-    if (bc)  rooms.push(bc + " Bedroom");
-    if (bac) rooms.push(bac + " Bathroom");
-    document.getElementById("sum-rooms").textContent = rooms.join(", ") || "—";
+    document.getElementById("sum-rooms").textContent = sqft + " sq.ft.";
   }
 
   function toggleSummary() {

@@ -470,10 +470,13 @@
   </div>
 
   <script>
-    // ── Pricing Config (per linear foot of counter) ──
-    const RATE_PER_FT = { Essentials: 18000, Premium: 28000, Luxe: 42000 };
-    const LAYOUT_SURCHARGE = { "Straight": 0, "L-shaped": 15000, "Parallel": 20000, "U-shaped": 30000 };
-    const MARGIN = 0.3;
+    // ── Pricing Config (per running foot) ──
+    // Essentials = Standard, Premium = Luxury, Luxe = Ultra Luxury
+    const TIER_RATES = {
+      Essentials: { lo: 10000, hi: 14000 },
+      Premium:    { lo: 15000, hi: 22000 },
+      Luxe:       { lo: 23000, hi: 40000 }
+    };
 
     function fmt(n) {
       if (n >= 10000000) return "₹" + (n/10000000).toFixed(1).replace(/\.0$/,'') + "Cr";
@@ -491,11 +494,9 @@
       const mC     = parseInt(getP("measurement_C")) || 0;
       const totalFt = mA + mB + mC;
 
-      const rate   = RATE_PER_FT[pkg] || 18000;
-      const total  = (totalFt * rate) + (LAYOUT_SURCHARGE[layout] || 0);
-
-      const lo = Math.round(total * (1 - MARGIN) / 5000) * 5000;
-      const hi = Math.round(total * (1 + MARGIN) / 5000) * 5000;
+      const tier = TIER_RATES[pkg] || TIER_RATES.Essentials;
+      const lo = totalFt * tier.lo;
+      const hi = totalFt * tier.hi;
 
       document.getElementById("priceDisplay").textContent = fmt(lo) + " – " + fmt(hi);
       document.getElementById("sum-layout").textContent   = layout;

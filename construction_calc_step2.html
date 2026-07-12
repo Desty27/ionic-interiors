@@ -142,30 +142,45 @@
 </div>
 
 <script>
-  // ── Pricing Config ──
-  const PACKAGE_PRICES={Essentials:1800000,Premium:2800000,Luxe:4200000};
-  const MARGIN=0.15;
+  // ── Pricing Config (per sq.ft.) ──
+  // Essentials = Standard, Premium = Luxury, Luxe = Ultra Luxury
+  const TIER_RATES = {
+    Essentials: { lo: 1900, hi: 2200 },
+    Premium:    { lo: 2300, hi: 2700 },
+    Luxe:       { lo: 2800, hi: 3500 }
+  };
+
   function fmt(n){
     if(n>=10000000)return "₹"+(n/10000000).toFixed(1).replace(/\.0$/,'')+"Cr";
     if(n>=100000)return "₹"+(n/100000).toFixed(1).replace(/\.0$/,'')+"L";
     return "₹"+Math.round(n/1000)+"K";
   }
+
   function calcPrice(){
-    const pkg=sessionStorage.getItem("constructionPackage")||
-      new URLSearchParams(window.location.search).get("package")||
+    var pkg = sessionStorage.getItem("constructionPackage") ||
+      new URLSearchParams(window.location.search).get("package") ||
       "Essentials";
-    const base=PACKAGE_PRICES[pkg]||PACKAGE_PRICES.Essentials;
-    const lo=Math.round(base*(1-MARGIN));
-    const hi=Math.round(base*(1+MARGIN));
-    document.getElementById("priceDisplay").textContent=fmt(lo)+" – "+fmt(hi);
-    document.getElementById("sum-pkg").textContent=pkg;
+
+    var builtup_area = parseInt(
+      new URLSearchParams(window.location.search).get("builtup_area") ||
+      sessionStorage.getItem("builtup_area")
+    ) || 1000;
+
+    var tier = TIER_RATES[pkg] || TIER_RATES.Essentials;
+    var lo = builtup_area * tier.lo;
+    var hi = builtup_area * tier.hi;
+
+    document.getElementById("priceDisplay").textContent = fmt(lo) + " – " + fmt(hi);
+    document.getElementById("sum-pkg").textContent = pkg;
   }
+
   function toggleSummary(){
-    const p=document.getElementById("summaryPanel");
+    var p = document.getElementById("summaryPanel");
     p.classList.toggle("open");
-    document.querySelector(".estimate-summary-link").textContent=
-    p.classList.contains("open")?"Hide summary ↑":"View detailed summary ↓";
+    document.querySelector(".estimate-summary-link").textContent =
+      p.classList.contains("open") ? "Hide summary ↑" : "View detailed summary ↓";
   }
+
   calcPrice();
 </script>
 

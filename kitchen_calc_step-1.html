@@ -488,5 +488,54 @@
         fill.style.width = pct + '%';
       });
     </script>
-  </body>
+  <script>
+  // --- SESSION STORAGE SAVER ---
+  // This script captures all form selections and saves them to sessionStorage right before going to the next page.
+  document.addEventListener("DOMContentLoaded", function () {
+    const forms = document.querySelectorAll("form");
+
+    forms.forEach(form => {
+      form.addEventListener("submit", function () {
+        // Find every input and select field that has a 'name' attribute
+        const inputs = form.querySelectorAll("input[name], select[name]");
+
+        inputs.forEach(input => {
+          // If it's a radio or checkbox, only save it if it is actually selected
+          if ((input.type === "radio" || input.type === "checkbox") && !input.checked) {
+            return;
+          }
+          // Save the value to sessionStorage using its name (e.g., 'BHK_Type': '3 BHK')
+          sessionStorage.setItem(input.name, input.value);
+        });
+      });
+    });
+
+    // Auto-restore previous selections if the user clicks the "BACK" button
+    const allInputs = document.querySelectorAll("input[name], select[name]");
+    allInputs.forEach(input => {
+      const savedValue = sessionStorage.getItem(input.name);
+      if (savedValue) {
+        if (input.type === "radio" || input.type === "checkbox") {
+          if (input.value === savedValue) {
+            input.checked = true;
+            // Trigger visual UI update if they are using custom active classes
+            const customBox = input.closest('.bhk-box, .layout-card, .package-card');
+            if (customBox) customBox.classList.add('active', 'selected');
+          }
+        } else if (input.type === "hidden") {
+           // Don't overwrite hidden inputs if they are managed by specific counters, but save their state
+           if(input.value === "1" && savedValue !== "1") {
+               input.value = savedValue;
+               // Update visible counter if it exists
+               const countDisplay = input.parentElement.querySelector('.count');
+               if (countDisplay) countDisplay.textContent = savedValue;
+           }
+        } else {
+          input.value = savedValue;
+        }
+      }
+    });
+  });
+</script>
+</body>
 </html>

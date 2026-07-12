@@ -315,16 +315,19 @@
   </div>
 
 <script>
-  // ── Pricing config ──
-  const PRICE_TABLE = {
-    length: { "4ft": 0, "5ft": 5000, "6ft": 10000, "8ft": 18000, "10ft": 28000, "12ft": 40000 },
-    type:   { "Sliding": 0, "Hinged": 8000, "Walk-in": 25000 },
-    finish: { "Laminate": 0, "Veneer": 12000, "Acrylic": 18000, "PU Polish": 22000 },
-    material: { "Pre-lam Board": 0, "MDF": 8000, "Plywood": 15000 },
-    accessories: { "None": 0, "Basic": 3000, "Standard": 6000, "Premium": 12000 }
+  // ── Pricing Config (per sq.ft.) ──
+  const TIER_RATES = {
+    Standard:      { lo: 1200, hi: 1600 },
+    Luxury:        { lo: 1700, hi: 2500 },
+    "Ultra Luxury": { lo: 2600, hi: 4000 }
   };
-  const BASE_WARDROBE = 22000;
-  const MARGIN = 0.35; // ±35% range
+
+  // Map the exact values from step-3 to the client's pricing tiers
+  const FINISH_TIER = {
+    "Laminate":  "Standard",
+    "Membrane":  "Luxury",
+    "Acrylic":   "Ultra Luxury"
+  };
 
   function fmt(n) {
     if (n >= 100000) return "₹" + (n/100000).toFixed(1).replace(/\.0$/,'') + "L";
@@ -333,38 +336,57 @@
   }
 
   function getParam(name) {
+    // Fetch from URL first, fallback to sessionStorage
     return new URLSearchParams(window.location.search).get(name) || sessionStorage.getItem(name) || "";
   }
 
   function calcPrice() {
-    const length      = getParam("wardrobe_length")  || "6ft";
-    const type        = getParam("wardrobe_type")    || "Sliding";
-    const finish      = getParam("finish")           || "Laminate";
-    const material    = getParam("material")         || "Pre-lam Board";
-    const accessories = getParam("accessories")      || "None";
+    // 1. Fetch exact variable names matching the previous forms
+    var length      = getParam("wardrobe_height")  || "6 ft";
+    var type        = getParam("wardrobe_type")    || "Sliding";
+    var finish      = getParam("wardrobe_finish")  || "Laminate";
+    var material    = getParam("wardrobe_material")|| "HDF_HMR";
+    
+    // 2. Safely capture multiple checkbox accessories
+    var urlParams = new URLSearchParams(window.location.search);
+    var accessoriesArr = urlParams.getAll("accessories");
+    var accessories = accessoriesArr.length > 0 ? accessoriesArr.join(", ") : "None selected";
 
-    // Fill summary
+    // 3. Update the UI Summary 
     document.getElementById("sum-length").textContent      = length;
     document.getElementById("sum-type").textContent        = type;
     document.getElementById("sum-finish").textContent      = finish;
-    document.getElementById("sum-material").textContent    = material;
+    document.getElementById("sum-material").textContent    = (material === "HDF_HMR") ? "HDF/HMR" : material;
     document.getElementById("sum-accessories").textContent = accessories;
 
-    let total = BASE_WARDROBE
-      + (PRICE_TABLE.length[length]      || 0)
-      + (PRICE_TABLE.type[type]          || 0)
-      + (PRICE_TABLE.finish[finish]      || 0)
-      + (PRICE_TABLE.material[material]  || 0)
-      + (PRICE_TABLE.accessories[accessories] || 0);
+    // 4. Mathematical Calculation
+    var lengthFt = parseFloat(length) || 6;
+    var area = lengthFt * 7; // Standard 7ft height for Shutter Area calculation
 
-    const lo = Math.round(total * (1 - MARGIN) / 1000) * 1000;
-    const hi = Math.round(total * (1 + MARGIN) / 1000) * 1000;
+    var tierName = FINISH_TIER[finish] || "Standard";
+    var tier = TIER_RATES[tierName] || TIER_RATES.Standard;
 
-    document.getElementById("priceDisplay").textContent = fmt(lo) + " – " + fmt(hi);
+    // Base cost based on Sq.Ft
+    var baseLo = area * tier.lo;
+    var baseHi = area * tier.hi;
+
+    // Dynamic additions so price actually moves based on specific choices
+    var accessorySurcharge = accessoriesArr.length * 2500; // Flat ₹2500 per accessory 
+    var typeMultiplier = (type === "Sliding") ? 1.15 : 1.0; // 15% extra for sliding track systems
+
+    // Final calculated range
+    var finalLo = (baseLo * typeMultiplier) + accessorySurcharge;
+    var finalHi = (baseHi * typeMultiplier) + accessorySurcharge;
+
+    // Round to the nearest 500 for clean display
+    finalLo = Math.round(finalLo / 500) * 500;
+    finalHi = Math.round(finalHi / 500) * 500;
+
+    document.getElementById("priceDisplay").textContent = fmt(finalLo) + " – " + fmt(finalHi);
   }
 
   function toggleSummary() {
-    const panel = document.getElementById("summaryPanel");
+    var panel = document.getElementById("summaryPanel");
     panel.classList.toggle("open");
     document.querySelector(".estimate-summary-link").textContent =
       panel.classList.contains("open") ? "Hide summary ↑" : "View detailed summary ↓";

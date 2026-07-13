@@ -1,7 +1,7 @@
 <!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Ionic Interiors - Enhanced Gallery Homepage (V7)</title>
+<title>Ionic Interiors</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
@@ -499,7 +499,7 @@
 <img alt="Commercial Interiors" class="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-0" id="showcase-img-1" src="assets/commercial-interior(home).webp" style="transform: scale(1); opacity: 0;">
 <img alt="Modular Kitchens &amp; Wardrobes" class="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-0" id="showcase-img-2" src="assets/kitchen.jpeg" style="transform: scale(1); opacity: 0;">
 <img alt="Custom Furniture &amp; Decor" class="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-0" id="showcase-img-3" src="assets/custom-furniture(home).jpg" style="transform: scale(1); opacity: 1;">
-<button class="absolute bottom-8 right-8 bg-[#C4E139] text-black px-8 py-4 rounded-xl font-label-bold text-label-bold shadow-2xl hover:scale-105 transition-transform flex items-center justify-center space-x-2 z-10" style="color: rgb(26, 26, 26);"><span class="">Explore Project</span><span class="material-symbols-outlined text-sm">arrow_outward</span></button>
+<button  onclick="window.location.href='services.html'" class="absolute bottom-8 right-8 bg-[#C4E139] text-black px-8 py-4 rounded-xl font-label-bold text-label-bold shadow-2xl hover:scale-105 transition-transform flex items-center justify-center space-x-2 z-10" style="color: rgb(26, 26, 26);"><span class="">Explore Project</span><span class="material-symbols-outlined text-sm">arrow_outward</span></button>
 </div>
 </div>
 </div>
@@ -578,7 +578,7 @@
 <p class="text-white/60 text-body-lg font-body-lg max-w-lg leading-relaxed">
                     At Ionic Interiors, we don't just design spaces; we create experiences. Every corner, every texture, and every detail is crafted to reflect your personality and elevate your lifestyle.
                 </p>
-<button class="px-10 py-4 rounded-xl font-label-bold text-label-bold hover:scale-105 transition-all" style="background-color: rgb(196, 225, 57); color: rgb(0, 0, 0);">
+<button  onclick="window.location.href='services.html'" class="px-10 py-4 rounded-xl font-label-bold text-label-bold hover:scale-105 transition-all" style="background-color: rgb(196, 225, 57); color: rgb(0, 0, 0);">
                     View Project Details
                 </button>
 </div>
@@ -710,10 +710,19 @@
 </a>
 </div>
 <div class="w-full md:w-auto">
-<div class="bg-primary rounded-full px-6 py-3 flex items-center justify-between min-w-[300px]" style="background-color: #C4E139; color: #000000;">
-<span class="text-black font-bold">Enter your Email</span>
-<span class="material-symbols-outlined text-black">arrow_forward</span>
-</div>
+<form onsubmit="event.preventDefault();" class="bg-[#C4E139] rounded-full px-6 py-3 flex items-center justify-between w-full md:w-auto min-w-[300px] shadow-sm">
+    <input 
+        type="email" 
+        placeholder="Enter your Email" 
+        class="bg-transparent border-none p-0 m-0 text-black font-label-bold placeholder-black/70 focus:ring-0 focus:outline-none w-full flex-1"
+    >
+    <button 
+        type="button" 
+        class="bg-transparent border-none p-0 m-0 cursor-default flex items-center justify-center ml-2"
+    >
+        <span class="material-symbols-outlined text-black">arrow_forward</span>
+    </button>
+</form>
 </div>
 </div>
 <div class="w-full h-[1px] bg-white/10 mb-12"></div>

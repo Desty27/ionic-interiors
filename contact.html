@@ -253,42 +253,37 @@
 </iframe>
 </div>
 </div>
-<!-- Right Column: Inquiry Form -->
-<div class="bg-inverse-surface p-8 md:p-12 rounded-[32px] shadow-2xl">
-<form class="space-y-6">
-<div class="space-y-2">
-<label class="font-label-bold text-white uppercase text-[12px] tracking-widest">Full Name</label>
-<input class="w-full bg-black/40 border-none rounded-xl text-white py-4 px-5 focus:ring-2 focus:ring-[#C4E139] placeholder-white/20 transition-all" placeholder="John Doe" type="text">
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-sm">
-<div class="space-y-2">
-<label class="font-label-bold text-white uppercase text-[12px] tracking-widest">Email Address</label>
-<input class="w-full bg-black/40 border-none rounded-xl text-white py-4 px-5 focus:ring-2 focus:ring-[#C4E139] placeholder-white/20 transition-all" placeholder="john@example.com" type="email">
-</div>
-<div class="space-y-2">
-<label class="font-label-bold text-white uppercase text-[12px] tracking-widest">Phone Number</label>
-<input class="w-full bg-black/40 border-none rounded-xl text-white py-4 px-5 focus:ring-2 focus:ring-[#C4E139] placeholder-white/20 transition-all" placeholder="+91 00000 00000" type="tel">
-</div>
-</div>
-<div class="space-y-2">
-<label class="font-label-bold text-white uppercase text-[12px] tracking-widest">Interested In</label>
-<select class="w-full bg-black/40 border-none rounded-xl text-white py-4 px-5 focus:ring-2 focus:ring-[#C4E139] transition-all">
-<option class="bg-black">Residential</option>
-<option class="bg-black">Commercial</option>
-<option class="bg-black">Custom Furniture</option>
-<option class="bg-black">Modular Furniture</option>
-<option class="bg-black">Construction</option>
-<option class="bg-black">Planning and Consultation</option>
-</select>
-</div>
-<div class="space-y-2">
-<label class="font-label-bold text-white uppercase text-[12px] tracking-widest">Message</label>
-<textarea class="w-full bg-black/40 border-none rounded-xl text-white py-4 px-5 focus:ring-2 focus:ring-[#C4E139] placeholder-white/20 transition-all" placeholder="Tell us about your project..." rows="4"></textarea>
-</div>
-<button class="w-full bg-[#C4E139] text-[#121212] font-label-bold py-5 rounded-xl hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-lg shadow-[#C4E139]/20" style="color: rgb(0, 0, 0);" type="submit">
-                            Send Message
-                        </button>
-</form>
+<!-- Right Column: CTA Banner -->
+<div class="w-full max-w-5xl mx-auto py-8 px-4">
+    <div class="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl group flex items-center justify-center">
+        
+        <img 
+            src="assets/residential-int(home).webp" 
+            alt="Luxurious Interior Design" 
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+            onerror="this.src='https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200'"
+        >
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-[#121212]/90 via-[#121212]/60 to-[#121212]/40 z-10"></div>
+        
+        <div class="relative z-20 text-center px-6 max-w-2xl flex flex-col items-center">
+            <span class="material-symbols-outlined text-[#C4E139] text-5xl mb-4">home_work</span>
+            <h2 class="font-headline-lg text-[32px] md:text-[42px] text-white leading-tight mb-4">
+                Ready to transform your space?
+            </h2>
+            <p class="text-white/80 font-body-lg mb-8">
+                Let's discuss your vision. Schedule a free consultation with our expert designers today.
+            </p>
+            
+            <button 
+                onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdow82wqDy0WsF0cVjn0FDZg_DLJ7lHvjIBsf4mDQeBbu6B-A/viewform?usp=header', '_blank')" 
+                class="bg-[#C4E139] text-black px-10 py-4 rounded-xl font-label-bold text-label-bold uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_30px_rgba(196,225,57,0.3)] transition-all duration-300"
+            >
+                Book your free consultation Now!
+            </button>
+        </div>
+
+    </div>
 </div>
 </div>
 </div>
@@ -419,19 +414,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-        // Micro-interaction for form button
-        const form = document.querySelector('form');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('button');
-            const originalText = btn.innerText;
-            btn.innerText = 'Message Sent';
-            btn.classList.add('bg-white');
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.classList.remove('bg-white');
-            }, 3000);
-        });
+
 
     </script>
 

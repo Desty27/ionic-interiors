@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Design &amp; Planning Calculator - Your Estimate | Ionic Interiors</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/calculator.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ionic-accent:#8b124c; --ionic-blue:#2596be; --ionic-ink:#1f1b16; --ionic-muted:#6f665d; --ionic-bg:#faf8f5; }
+    body { font-family:"Manrope",sans-serif; }
+    .estimate-hero { text-align:center; padding:48px 20px 28px; border-bottom:1px solid #f0ece8; }
+    .estimate-badge { display:inline-flex; align-items:center; gap:8px; background:#eaf7f0; color:#1d8a55; font-size:13px; font-weight:600; padding:6px 16px; border-radius:999px; margin-bottom:18px; }
+    .estimate-badge svg { width:18px; height:18px; fill:#1d8a55; }
+    .estimate-label { font-size:13px; font-weight:600; color:var(--ionic-muted); letter-spacing:.5px; text-transform:uppercase; margin-bottom:6px; }
+    .estimate-price { font-family:"Marcellus",serif; font-size:clamp(34px,8vw,50px); color:#1d8a55; line-height:1.1; margin-bottom:10px; }
+    .estimate-note { display:inline-block; font-size:13px; color:#888; background:#f5f5f5; padding:5px 14px; border-radius:6px; margin-bottom:16px; }
+    .estimate-summary-link { font-size:13px; color:var(--ionic-blue); text-decoration:underline; cursor:pointer; background:none; border:none; padding:0; }
+    .summary-panel { display:none; background:var(--ionic-bg); border-radius:12px; padding:20px 24px; margin:16px 20px 0; text-align:left; }
+    .summary-panel.open { display:block; }
+    .summary-row { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee; font-size:14px; }
+    .summary-row:last-child { border-bottom:none; }
+    .summary-row span:first-child { color:var(--ionic-muted); }
+    .summary-row span:last-child { font-weight:600; color:var(--ionic-ink); }
+    .cta-banner { background:var(--ionic-bg); padding:32px 20px; text-align:center; }
+    .cta-banner h2 { font-family:"Marcellus",serif; font-size:clamp(20px,4vw,26px); color:var(--ionic-ink); margin-bottom:8px; }
+    .cta-banner p { color:var(--ionic-muted); font-size:14px; margin-bottom:22px; }
+    .free-badge { display:inline-block; background:#1d8a55; color:#fff; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; margin:0 4px; vertical-align:middle; }
+    .btn-quote { display:inline-block; background:var(--ionic-accent); color:#fff !important; font-family:"Manrope",sans-serif; font-weight:700; font-size:15px; letter-spacing:1px; text-transform:uppercase; padding:14px 40px; border-radius:999px; text-decoration:none !important; transition:transform .2s,box-shadow .2s; box-shadow:0 4px 20px rgba(139,18,76,.25); }
+    .btn-quote:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(139,18,76,.35); }
+    .trust-section { padding:32px 20px 48px; border-top:1px solid #f0ece8; }
+    .trust-section h3 { font-family:"Marcellus",serif; font-size:20px; color:var(--ionic-ink); margin-bottom:24px; text-align:center; }
+    .trust-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:20px; max-width:600px; margin:0 auto; }
+    .trust-item { display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center; }
+    .trust-icon { width:60px; height:60px; background:#f5f0ec; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+    .trust-icon svg { width:28px; height:28px; }
+    .trust-item p { font-size:12px; font-weight:600; color:var(--ionic-ink); margin:0; line-height:1.4; }
+    .trust-item small { font-size:11px; color:var(--ionic-muted); }
+  </style>
+</head>
+<body>
+
+  <div class="top-nav">
+    <div class="logo">
+      <a href="index.html"><img src="assets/logo.png" alt="Ionic Interiors Logo"></a>
+    </div>
+    <div class="nav-steps-container">
+      <div class="nav-steps">
+        <div class="progress-line">
+          <div class="progress-fill" style="width: 100%;"></div>
+        </div>
+        <div class="step completed">
+          <div class="circle"></div>
+          <div class="label">AREA</div>
+        </div>
+        <div class="step completed">
+          <div class="circle"></div>
+          <div class="label">PACKAGE</div>
+        </div>
+        <div class="step active">
+          <div class="circle"></div>
+          <div class="label">ESTIMATE</div>
+        </div>
+      </div>
+      <div class="step-counter">3/3</div>
+    </div>
+  </div>
+
+<div class="container mt-5" style="max-width: 700px;">
+
+  <!-- Step 1: Area Input (hidden) -->
+  <form id="step1" method="get" action="planning_calc_step-2.html" class="card p-4 border-0 hidden">
+    <div class="container py-5">
+      <h4 class="text-center fw-bold mb-4">Enter your property area</h4>
+      <p class="text-center text-muted mb-4">Please enter the total square footage for accurate estimation.</p>
+      <div class="bhk-box active" style="cursor: default;">
+        <div class="d-flex align-items-center gap-3">
+          <span class="material-symbols-outlined" style="font-size: 28px; color: #2596be;">square_foot</span>
+          <div class="flex-grow-1">
+            <label for="planning_area" class="form-label fw-bold mb-1">Square Footage (sq.ft)</label>
+            <input type="number" class="form-control py-2 px-3" id="planning_area" name="planning_area" placeholder="e.g. 1200" min="100" max="50000" required style="border: 1px solid #e0e0e0; border-radius: 8px;">
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 p-3 rounded-3" style="background: #f0f8ff; border: 1px solid #d0e8f7;">
+        <small class="text-muted">
+          <strong>Tip:</strong> Enter the total built-up area of your property. This helps us calculate accurate pricing for floor plans, elevations, and structural drawings.
+        </small>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end mt-4 sticky-bottom bg-white py-3" style="z-index: 1020;">
+      <button type="submit" name="step1" class="btn butte px-4 rounded-pill fw-bold">NEXT</button>
+    </div>
+  </form>
+
+  <!-- Step 2: Package Selection (hidden) -->
+  <form id="step2" method="get" action="planning_calc_step-3.html" class="card p-4 border-0 hidden">
+    <h5 class="text-center fw-bold mb-4">Select Your Package</h5>
+    <div class="package-container">
+      <label class="package-card">
+        <input type="radio" name="planning_package" value="Basic" class="radio-input" checked>
+        <span class="radio-check"></span>
+        <h3 class="package-title">Basic</h3>
+        <p class="package-description">Essential architectural drawings for standard residential projects.</p>
+        <ul class="package-features">
+          <li>Floor plan</li>
+          <li>Footer &amp; column layout</li>
+          <li>Furniture layout</li>
+          <li>3 side elevations</li>
+        </ul>
+      </label>
+      <label class="package-card">
+        <input type="radio" name="planning_package" value="Pro" class="radio-input">
+        <span class="radio-check"></span>
+        <h3 class="package-title">Pro (Pru)</h3>
+        <p class="package-description">Comprehensive structural and MEP drawings for complete project execution.</p>
+        <ul class="package-features">
+          <li>Floor plan</li>
+          <li>Furniture layout</li>
+          <li>Structural drawing</li>
+          <li>Electrical drawing</li>
+          <li>Plumbing drawing</li>
+          <li>Civil work drawing</li>
+          <li>All side elevation drawing</li>
+        </ul>
+      </label>
+    </div>
+    <div class="d-flex justify-content-between mt-4 sticky-bottom bg-white py-3" style="z-index: 1020;">
+      <button type="button" class="btn btn-link text-danger fw-bold" onclick="window.location.href='planning_calc_step-1.html'">BACK</button>
+      <button type="submit" name="step2" class="btn butte px-4 rounded-pill fw-bold">NEXT</button>
+    </div>
+  </form>
+
+  <!-- Step 3: Estimate Results -->
+  <div id="step3" class="card border-0">
+
+    <!-- Estimate Hero -->
+    <div class="estimate-hero">
+      <div class="estimate-badge">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Estimate Ready
+      </div>
+      <div class="estimate-label">Here's your estimated budget range</div>
+      <div class="estimate-price" id="priceDisplay">₹—</div>
+      <div class="estimate-note">This isn't a final quote and can be customised to suit your needs.</div>
+      <br>
+      <button class="estimate-summary-link" onclick="toggleSummary()">View detailed summary ↓</button>
+    </div>
+
+    <!-- Summary Panel -->
+    <div class="summary-panel" id="summaryPanel">
+      <div class="summary-row"><span>Area</span><span id="sum-area">—</span></div>
+      <div class="summary-row"><span>Package</span><span id="sum-pkg">—</span></div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="cta-banner">
+      <h2>Want an accurate quote?</h2>
+      <p>Book a <span class="free-badge">FREE</span> consultation with our designer to get<br>a detailed quote for your design &amp; planning project.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdow82wqDy0WsF0cVjn0FDZg_DLJ7lHvjIBsf4mDQeBbu6B-A/viewform?usp=header" target="_blank" class="btn-quote">
+        GET DETAILED QUOTE
+      </a>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="trust-section">
+      <h3>Why choose us</h3>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8b124c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+              <path d="M8 14h.01M12 14h.01M16 14h.01"/>
+            </svg>
+          </div>
+          <p>45 day move-in<br>guarantee*</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8b124c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <p>Flat 10-year<br>warranty**</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8b124c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </div>
+          <p>146 quality<br>checks</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8b124c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+            </svg>
+          </div>
+          <p>Easy<br>EMI's</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function fmt(n) {
+    if (n >= 100000) return "₹" + (n/100000).toFixed(1).replace(/\.0$/,'') + "L";
+    if (n >= 1000)   return "₹" + Math.round(n/1000) + "K";
+    return "₹" + n;
+  }
+
+  function getParam(name) {
+    return new URLSearchParams(window.location.search).get(name) || sessionStorage.getItem(name) || "";
+  }
+
+  function calcPrice() {
+    var areaInput = getParam("planning_area");
+    var pkg       = getParam("planning_package") || "Basic";
+
+    var sqft = parseFloat(areaInput) || 1000;
+    var basePrice = 0;
+
+    if (pkg === "Basic") {
+        basePrice = (sqft <= 1500) ? 30000 : 40000;
+    } else if (pkg === "Pro") {
+        basePrice = sqft * 20;
+    }
+
+    var margin = 0.10;
+    var finalLo = Math.round((basePrice * (1 - margin)) / 500) * 500;
+    var finalHi = Math.round((basePrice * (1 + margin)) / 500) * 500;
+
+    document.getElementById("priceDisplay").textContent = fmt(finalLo) + " – " + fmt(finalHi);
+    document.getElementById("sum-area").textContent = sqft + " sq.ft";
+    document.getElementById("sum-pkg").textContent = pkg;
+  }
+
+  function toggleSummary() {
+    var panel = document.getElementById("summaryPanel");
+    panel.classList.toggle("open");
+    document.querySelector(".estimate-summary-link").textContent =
+      panel.classList.contains("open") ? "Hide summary ↑" : "View detailed summary ↓";
+  }
+
+  calcPrice();
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const steps = document.querySelectorAll('.nav-steps .step');
+    if (!steps.length) return;
+    let last = 0;
+    steps.forEach((s, i) => {
+      if (s.classList.contains('active') || s.classList.contains('completed') || (s.querySelector('.circle') && s.querySelector('.circle').classList.contains('active'))) {
+        last = i;
+      }
+    });
+    const fill = document.querySelector('.progress-fill');
+    if (!fill) return;
+    const pct = (steps.length > 1) ? (last / (steps.length - 1)) * 100 : 0;
+    fill.style.width = pct + '%';
+  });
+</script>
+</body>
+</html>
